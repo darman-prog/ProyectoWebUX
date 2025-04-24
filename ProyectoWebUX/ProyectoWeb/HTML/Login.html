@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Universidad</title>
+  
+  <link rel="stylesheet" href="/CSS/EstiloLogin.css">
+  <link rel="stylesheet" href="/CSS/Global.css">
+  
+  <link rel="icon" href="https://unab.edu.co/wp-content/uploads/2022/09/cropped-favicon-naranja-32x32.png" sizes="32x32">
+</head>
+<body>
+  <div class="main-container">
+    <div class="content-wrapper">
+      
+      <!-- Carrusel -->
+      <div class="left-panel">
+        <div class="slideshow">
+          <div class="slide" style="background-image: url('/IMG/EdificioUnab.jpg');"></div>
+          <div class="slide" style="background-image: url('/IMG/ElbosqueUnab.jpg');"></div>
+          <div class="slide" style="background-image: url('/IMG/LacasonaUnab.jpg');"></div>
+        </div>
+      </div>
+
+      <!-- Login -->
+      <div class="right-panel">
+        <div class="login-container">
+          <img src="/IMG/LogoUnab.png" alt="Logo Universidad" class="login-logo">
+          <h2>Acceso Estudiantes</h2>
+
+          <form>
+            <div class="input-group">
+              <label for="email">Correo institucional</label>
+              <a class="forgot-password" href="https://correo.unab.edu.co/creacion.jsp" target="_blank">¿No tiene usuario?</a>
+              <input type="email" id="email" name="email" placeholder="usuario@unab.edu.co" required>
+            </div>
+            <div class="input-group">
+              <label for="password">Contraseña</label>
+              <a class="forgot-password" href="https://correo.unab.edu.co/recuperarClave.jsp" target="_blank">¿Olvidaste tu contraseña?</a>
+              <input type="password" id="password" name="password" placeholder="••••••••" required>
+            </div>
+            <button type="submit" class="login-btn">Ingresar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-unab">
+      <div class="footer-content">
+        <img src="/IMG/LogoUnab.png" alt="Logo UNAB" class="footer-logo">
+        <div class="footer-text">
+          <p>Universidad Autónoma de Bucaramanga</p>
+          <p>© Todos los derechos reservados</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Script para la animacion de las imagenes -->
+  <script>
+    let slides = document.querySelectorAll('.slide');
+    let index = 0;
+
+    function showNextSlide() {
+      slides.forEach((slide) => slide.classList.remove('active'));
+      slides[index].classList.add('active');
+      index = (index + 1) % slides.length;
+    }
+
+    showNextSlide();
+    setInterval(showNextSlide, 5000);
+  </script>
+</body>
+</html>
