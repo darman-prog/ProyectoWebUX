@@ -3,13 +3,26 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  animation: fadeInBody 0.80s ease-in;
 }
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 0.90; }
+}
+
 
 /* Contenedor principal */
 .main-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }
 
 /* Contenido dividido en dos paneles */
