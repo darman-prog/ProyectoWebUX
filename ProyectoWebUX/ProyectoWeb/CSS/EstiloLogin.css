@@ -51,7 +51,7 @@
 /* Panel derecho con login */
 .right-panel {
   flex: 1;
-  background-color: #e9a427  ;
+  background-color: #e9a427;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,6 +76,12 @@
 h2 {
   margin-bottom: 30px;
   color: #333;
+}
+
+input:focus {
+  border-color: #ff9900;
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 153, 0, 0.5);
 }
 
 .input-group {
@@ -131,6 +137,28 @@ h2 {
   background-color: #e07000;
 }
 
+/* iconos estilizados */
+.input-icon {
+  position: relative;
+}
+
+.input-icon input {
+  padding-right: 40px; /* Deja espacio para el icono */
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #aaa;
+}
+
+
+
+
 /* Footer */
 .footer-unab {
   background-color: #222;
@@ -155,3 +183,4 @@ h2 {
   margin: 0;
   font-size: 14px;
 }
+
