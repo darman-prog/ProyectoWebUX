@@ -1,13 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/DesarrolloUniversitario/TrabajosUX/ProyectoWebUX/ProyectoWeb/CSS/Global.css">
-    <title>Perfil del Estudiante</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil Estudiante - UNAB</title>
+  <link rel="stylesheet" href="../CSS/EstiloPerfil.css">
 </head>
 <body>
 
-    
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <img src="img/logo-unab.png" alt="Logo UNAB">
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="main.html">Inicio</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="horas.html">Horas Libres</a></li>
+        <li><a href="logout.html">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- PERFIL DEL ESTUDIANTE -->
+  <main class="perfil-container">
+    <div class="perfil-card">
+      <div class="foto-perfil">
+        <img src="img/foto-estudiante.jpg" alt="Foto del Estudiante">
+      </div>
+      <div class="info-perfil">
+        <h2>Diego Meza</h2>
+        <p><strong>Programa:</strong> Ingeniería de Sistemas</p>
+        <p><strong>Código Estudiantil:</strong> 202212345</p>
+        <p><strong>Correo Institucional:</strong> diego.meza@unab.edu.co</p>
+        <p><strong>Horas Libres Completadas:</strong> 80</p>
+        <p><strong>Horas Faltantes:</strong> 40</p>
+
+        <div class="acciones">
+          <button>Editar Perfil</button>
+          <button>Ver Mis Cursos</button>
+          <button>Mis Eventos Registrados</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2024 Universidad Autónoma de Bucaramanga - Portal Estudiantil</p>
+  </footer>
+
 </body>
 </html>

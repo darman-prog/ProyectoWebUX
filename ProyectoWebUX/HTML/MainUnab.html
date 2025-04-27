@@ -8,7 +8,114 @@
 </head>
 <body>
     
-    
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Estudiantil UNAB</title>
+    <link rel="stylesheet" href="../CSS/EstiloMain.css">
+    <script defer src="../JS/MainUnab.js"></script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <img src="img/logo-unab.png" alt="Logo UNAB">
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#perfil">Perfil</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#horas">Horas Libres</a></li>
+                <li><a href="#crear-usuario">Crear Usuario</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- BANNER PRINCIPAL -->
+    <section class="banner">
+        <h1>Bienvenido al Portal Estudiantil UNAB</h1>
+        <p>Accede a toda tu información académica y participa en eventos universitarios.</p>
+    </section>
+
+    <!-- FORMULARIO DE LOGIN -->
+    <section class="login">
+        <h2>Iniciar Sesión</h2>
+        <form id="login-form">
+            <input type="text" id="usuario" placeholder="Usuario" required>
+            <input type="password" id="clave" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+        </form>
+    </section>
+
+    <!-- PERFIL DEL ESTUDIANTE -->
+    <section id="perfil" class="perfil">
+        <h2>Mi Perfil</h2>
+        <p>Nombre: Diego Meza</p>
+        <p>Programa: Ingeniería de Sistemas</p>
+        <p>Correo: diego.meza@unab.edu.co</p>
+    </section>
+
+    <!-- HORAS LIBRES -->
+    <section id="horas" class="horas">
+        <h2>Horas Libres</h2>
+        <p>Horas completadas: 80</p>
+        <p>Horas faltantes: 40</p>
+    </section>
+
+    <!-- CREAR USUARIO -->
+    <section id="crear-usuario" class="crear-usuario">
+        <h2>Crear Nuevo Usuario</h2>
+        <form id="registro-form">
+            <input type="text" placeholder="Nombres y Apellidos" required>
+            <input type="text" placeholder="Cédula" required>
+            <input type="password" placeholder="Contraseña" required>
+            <input type="password" placeholder="Verificación de Contraseña" required>
+            <select required>
+                <option value="">Seleccione Género</option>
+                <option>Masculino</option>
+                <option>Femenino</option>
+                <option>Otro</option>
+            </select>
+            <button type="submit">Registrar</button>
+        </form>
+    </section>
+
+    <!-- EVENTOS -->
+    <section id="eventos" class="eventos">
+        <h2>Eventos Disponibles</h2>
+        <div class="evento">
+            <h3>Ingeniotic</h3>
+            <p>Fecha: Septiembre 2024</p>
+            <button>Registrarme</button>
+        </div>
+        <div class="evento">
+            <h3>Unab Fest</h3>
+            <p>Fecha: Octubre 2024</p>
+            <button>Registrarme</button>
+        </div>
+        <div class="evento">
+            <h3>Semana de Ingeniería</h3>
+            <p>Fecha: Noviembre 2024</p>
+            <button>Registrarme</button>
+        </div>
+        <div class="evento">
+            <h3>Ulibro</h3>
+            <p>Fecha: Agosto 2024</p>
+            <button>Registrarme</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2024 Universidad Autónoma de Bucaramanga. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
+
 
 
 </body>
