@@ -1,4 +1,5 @@
 /* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -7,12 +8,12 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f6f9;
   color: #333;
+  background-color: #ffe000;
 }
 
 .header {
-  background-color: #ffe000; /* Amarillo UNAB */
+  background-color: #e0c200; /* Amarillo UNAB */
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -75,20 +76,9 @@ form button:hover {
 }
 
 .footer {
-  background-color: #ffe000;
+  background-color: #e0c200;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
 }
 
-/* Animaciones */
-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
