@@ -64,7 +64,8 @@
 /* Panel derecho con login */
 .right-panel {
   flex: 1;
-  background-color: #e9a427;
+  background-color: #00aff1  ;
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,8 +83,9 @@
 }
 
 .login-logo {
-  max-width: 150px;
+  max-width: 250px;
   margin-bottom: 20px;
+
 }
 
 h2 {
@@ -159,6 +161,14 @@ input:focus {
   padding-right: 40px; /* Deja espacio para el icono */
   width: 100%;
 }
+
+.IngresarLink {
+  text-decoration: none;
+  color: #f3f2f1;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 
 .toggle-password {
   position: absolute;
