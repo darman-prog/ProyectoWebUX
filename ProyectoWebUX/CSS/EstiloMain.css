@@ -203,4 +203,10 @@ body {
   gap: 6px;
 }
 
+footer .footer-btn:hover {
+  background-color: #F58220;
+  color: white;
+  transition: background-color 0.3s;
+  transform: scale(1.05);
+}
 
