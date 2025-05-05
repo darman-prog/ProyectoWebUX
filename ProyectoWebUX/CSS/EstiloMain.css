@@ -1,84 +1,206 @@
 /* Reset básico */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  color: #333;
-  background-color: #ffe000;
-}
-
-.header {
-  background-color: #e0c200; /* Amarillo UNAB */
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.header .nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-}
-
-.header .nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-
-.banner {
-  background: url('img/banner-unab.jpg') center/cover no-repeat;
-  text-align: center;
-  padding: 4rem 1rem;
-  color: #fff;
-}
-
-.login, .perfil, .horas, .crear-usuario, .eventos {
-  padding: 2rem;
-  margin: 2rem;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-form input, form select, form button {
-  display: block;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  margin-bottom: 1rem;
-  padding: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  background-color: #09161B;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-form button {
-  background-color: #0055a5; /* Azul institucional UNAB */
-  color: #fff;
-  font-weight: bold;
+.encabezado-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo + campana */
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.logo-section img:first-child {
+  height: 35px; /* campana más pequeña */
+}
+
+.logo-unab {
+  height: 40px;
+}
+
+/* Navegación + luna */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  width: 100%;
+  flex-direction: row-reverse;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #171111;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.butonNav {
+  background-color: #5CCCF6;
+  padding: 6px 12px;
+  width: 80px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.3s;
+  font-size: 14px;
+  transition: background-color 0.3s;
 }
 
-form button:hover {
-  background-color: #003d7a;
+.butonNav:hover {
+  background-color: #F58220;
 }
 
-.evento {
-  margin-bottom: 1rem;
-  padding: 1rem;
-  background-color: #f0f0f0;
+button.modo-oscuro {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+}
+
+
+button.modo-oscuro img {
+  height: 25px;
+  width: 25px;
+}
+/* estilacions Cuerpo de pagina */
+
+.ContenedorTitulo{
+  background-color: #F58220;
+  border-radius: 10px;
+  padding-top: 1px;
+  padding-left: 3px;
+  width: 40vw;
+  margin-top: 10px;
+  position: relative;
+  left: 30vw;
+  text-align: center;
+  top: -10px;
+}
+
+.TituloPrincipal{
+  position: relative;
+  top: -9px;
+  font-size: 30px;
+  color: #FFF6F6;
+  margin-top: 20px;
+  text-align: center;
+}
+
+body {
+  padding-top: 60px;
+  background: #5CCCF6;
+}
+
+.main-content{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #F5F5F5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: larger;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 40%;
+  height: auto;
   border-radius: 8px;
 }
 
+
+/* estilacion footer */
 .footer {
-  background-color: #e0c200;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
+  background-color: #191919;
+  color: white;
+  padding: 12px 20px;
+  font-family: Arial, sans-serif;
 }
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-footer {
+  height: 40px; /* Ajusta según tamaño de tu logo */
+}
+
+.footer-text p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footer-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
 

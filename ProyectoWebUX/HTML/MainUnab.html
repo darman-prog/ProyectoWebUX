@@ -1,78 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/DesarrolloUniversitario/TrabajosUX/ProyectoWebUX/ProyectoWeb/CSS/Global.css">
     <title>Portal Estudiantil UNAB</title>
     <link rel="stylesheet" href="../CSS/EstiloMain.css">
+    <link rel="stylesheet" href="../CSS/Global.css">
     <script defer src="../JS/MainUnab.js"></script>
+    <link rel="icon" href="https://unab.edu.co/wp-content/uploads/2022/09/cropped-favicon-naranja-32x32.png" sizes="32x32">
 </head>
-
-<body class="body-main">
-
-    <!-- HEADER -->
-    <header class="header">
-        <div class="logo">
-            <img src="img/logo-unab.png" alt="Logo UNAB">
+<body>
+    <header>
+        <div class="encabezado-container">
+            <div class="logo-section">
+                <img src="../IMG/CampanaNoti.png" alt="Campana" class="campana">
+                <img src="../IMG/FacultadMedicina.png" alt="Logo UNAB" class="logo-unab">
+            </div>
+            <nav class="nav-menu">
+                <button  class="butonNav"><a href="Libreta.html" target="_blank">Libreta</a></button>
+                <button  class="butonNav"><a href="Eventos.html" target="_blank">Eventos</a></button>
+                <button  class="butonNav"><a href="Cursos.html" target="_blank">Cursos</a></button>
+                <button  class="butonNav"><a href="Perfil.html" target="_blank">Perfil</a></button>
+                <button  class="butonNav"><a href="MainUnab.html" target="_blank">Inicio</a></button>
+                <button class="modo-oscuro"><img src="/ProyectoWebUX/IMG/LunaModoOscuro.png" alt="Modo Oscuro"></button>
+            </nav>
         </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="../HTML/Perfil.html">Perfil</a></li>
-                <li><a href="#eventos">Eventos</a></li>
-                <li><a href="#horas">Horas Libres</a></li>
-                <li><a href="../HTML/CrearUsuario.html">Crear Usuario</a></li>
-            </ul>
-        </nav>
     </header>
-
-    <!-- BANNER PRINCIPAL -->
-    <section class="banner">
-        <h1>Bienvenido al Portal Estudiantil UNAB</h1>
-        <p>Accede a toda tu información académica y participa en eventos universitarios.</p>
-    </section>
-
-    <!-- HORAS LIBRES -->
-    <section id="horas" class="horas">
-        <h2>Horas Libres</h2>
-        <p>Horas completadas: 80</p>
-        <p>Horas faltantes: 40</p>
-    </section>
-
-
-    <!-- EVENTOS -->
-    <section id="eventos" class="eventos">
-        <h2>Eventos Disponibles</h2>
-        <div class="evento">
-            <h3>Ingeniotic</h3>
-            <p>Fecha: Septiembre 2024</p>
-            <button>Registrarme</button>
+    <div class="ContenedorTitulo">
+        <h1 class="TituloPrincipal">Bienvenido al Portal Estudiantil UNAB</h1>
+    </div>
+    <main class="main-content">
+        <div class="card-container">
+            <div class="card">
+                <img src="../IMG/image 4.png" alt="Noticias">
+                <p>La UNAB conforma Comité del Sistema Integrado de Gestión de Calidad para 2025</p>
+            </div>
+            <div class="card">
+                <img src="../IMG/image 9.png" alt="Noticias">
+                <p>Cursos de Informática cuarto ciclo (primer semestre 2025)</p>
+            </div>
+            <div class="card">
+                <img src="../IMG/image 7.png" alt="Noticias">
+                <p>Pruebas de informática para estudiantes continuos de programas presenciales (sábado 7 de junio de 2025)</p>
+            </div>
+            <div class="card">
+                <img src="../IMG/image 10.png" alt="Noticias">
+                <p>Visitas con fines de acreditación para los tecnologías de la UNAB</p>
+            </div>
+            <div class="card">
+                <img src="../IMG/image 8.png" alt="Noticias">
+                <p>La UNAB conforma Comité del Sistema Integrado de Gestión de Calidad para 2025</p>
+            </div>
+            <div class="card">
+                <img src="../IMG/image 4.png" alt="Noticias">
+                <p>Actualización Suite Visión Empresarial - Software de Gestión Estratégica</p>
+            </div>
         </div>
-        <div class="evento">
-            <h3>Unab Fest</h3>
-            <p>Fecha: Octubre 2024</p>
-            <button>Registrarme</button>
-        </div>
-        <div class="evento">
-            <h3>Semana de Ingeniería</h3>
-            <p>Fecha: Noviembre 2024</p>
-            <button>Registrarme</button>
-        </div>
-        <div class="evento">
-            <h3>Ulibro</h3>
-            <p>Fecha: Agosto 2024</p>
-            <button>Registrarme</button>
-        </div>
-    </section>
+    </main>
 
-    <!-- FOOTER -->
+
+
     <footer class="footer">
-        <p>© 2024 Universidad Autónoma de Bucaramanga. Todos los derechos reservados.</p>
-    </footer>
+        <div class="footer-container">
+          <div class="footer-left">
+            <!-- Logo de la UNAB -->
+            <img src="../IMG/LogoUnab.png" alt="Logo UNAB" class="logo-footer"> <!-- ← Pon aquí la ruta del logo -->
+            <div class="footer-text">
+              <p>Universidad Autónoma De Bucaramanga</p>
+              <p>© Todos los derechos reservados</p>
+            </div>
+          </div>
+      
+          <div class="footer-buttons">
+            <button class="footer-btn">Encuestas <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
+             
 
-</body>
-</html>
+            <button class="footer-btn">Consultas <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
+            
 
+            <button class="footer-btn">Preguntas frecuentes  <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
+            
+
+          </div>
+        </div>
+      </footer>
+      
 
 
 </body>
