@@ -28,7 +28,7 @@ header {
 .logo-section {
   display: flex;
   align-items: center;
-  gap: 35px;
+  gap: 35px; /* Espacio entre la campana y el logo */
 }
 
 .logo-section img:first-child {
@@ -46,6 +46,7 @@ header {
   gap: 45px;
   width: 100%;
   flex-direction: row-reverse;
+  margin-left: 20px; /* Espacio entre el botón de menú y la navegación */
 }
 
 .nav-menu a {
@@ -55,6 +56,7 @@ header {
   transition: color 0.3s;
 }
 
+
 .butonNav {
   background-color: #5CCCF6;
   padding: 6px 12px;
@@ -63,11 +65,20 @@ header {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s; /* Añadido para la transición de fondo */
 }
+
+
 
 .butonNav:hover {
   background-color: #F58220;
+  color: white;
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+.butonNav:hover a {
+  color: white; /* Cambia el color del texto al hacer hover sobre el botón */
 }
 
 button.modo-oscuro {
@@ -78,33 +89,33 @@ button.modo-oscuro {
   width: 30px;
 }
 
-
 button.modo-oscuro img {
   height: 25px;
   width: 25px;
 }
-/* estilacions Cuerpo de pagina */
 
-.ContenedorTitulo{
+.menu-toggle {
+  margin-left: 20px; 
+}
+/* final de estilos header */
+/* estilacions Cuerpo de pagina */
+.ContenedorTitulo {
   background-color: #F58220;
   border-radius: 10px;
-  padding-top: 1px;
-  padding-left: 3px;
-  width: 40vw;
-  margin-top: 10px;
-  position: relative;
-  left: 30vw;
+  padding: 16px 24px;
+  max-width: 800px;
+  width: 90%;
+  margin: 20px auto; /* Centra horizontalmente */
   text-align: center;
-  top: -10px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
 }
 
-.TituloPrincipal{
-  position: relative;
-  top: -9px;
-  font-size: 30px;
+.TituloPrincipal {
+  font-size: 28px;
   color: #FFF6F6;
-  margin-top: 20px;
-  text-align: center;
+  margin: 0;
+  font-weight: bold;
+  line-height: 2;
 }
 
 body {
@@ -151,62 +162,194 @@ body {
 }
 
 
-/* estilacion footer */
+
+
+/* Footer general */
+/* ajustes para el footer y pagina general */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* El contenedor principal ocupa el espacio restante */
+main {
+  flex: 1;
+}
+/* ajustes para el footer y pagina general */
+
 .footer {
   background-color: #191919;
   color: white;
   padding: 12px 20px;
   font-family: Arial, sans-serif;
+  width: 100%;
 }
 
 .footer-container {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
+  flex-wrap: wrap; /* Permite que se acomode bien en pantallas pequeñas */
+  gap: 16px;
 }
 
+/* Parte izquierda del footer: logo + texto */
 .footer-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 20px;
+  min-width: 240px;
 }
 
 .logo-footer {
-  height: 40px; /* Ajusta según tamaño de tu logo */
+  height: 40px;
+  margin-left: 25px;
+  transform: scaleX(20px) scaleY(20px); /* Ajuste de escala para el logo */
 }
 
 .footer-text p {
-  margin: 0;
+  margin: 0;  
+  margin-left: 20px;
   font-size: 14px;
+  text-align: center;
 }
 
+/* Parte derecha del footer: botones */
 .footer-buttons {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: 260px;
 }
 
 .footer-btn {
   background-color: white;
   color: black;
   border: none;
-  padding: 8px 16px;
+  padding: 6px 16px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
-  display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 12px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-footer .footer-btn:hover {
+.footer-btn img {
+  height: 18px; /* Ajuste de tamaño del ícono */
+}
+
+/* Hover */
+.footer-btn:hover {
   background-color: #F58220;
   color: white;
-  transition: background-color 0.3s;
   transform: scale(1.05);
 }
+
+
+/* estilos responsive */
+/* Responsive: organización en columnas para pantallas pequeñas */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mostrar solo en móviles */
+@media screen and (max-width: 600px) {
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    /* Agrega un icono o cambio visual al hacer hover */
+    transition: background-color 0.3s ease;
+  }
+
+  .menu-toggle:hover {
+    background-color: #F58220;
+    border-radius: 15px;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .nav-menu {
+    max-height: 0; /* Ocultar menú con altura 0 para transición */
+    overflow: hidden;
+    flex-direction: column;
+    gap: 3px;
+    width: 100%;
+    background-color: #15455c;
+    border-radius: 10px;
+    padding: 0 10px;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+
+  .nav-menu.active {
+    max-height: 500px; /* Suficiente para mostrar todos los elementos */
+    padding: 10px;
+  }
+}
+
+/* media query para cuerpo de pagina */
+@media screen and (max-width: 600px) {
+
+  body {
+    padding-top: 60px; /* Mantener el padding superior para el header fijo */
+    text-align: center;
+    background-color: rgb(167, 163, 163);
+  }
+
+  .main-content {
+    padding: 10px; /* Reducir el padding en pantallas pequeñas */
+  }
+
+  .card-container {
+    grid-template-columns: 1fr; /* Cambiar a una sola columna en pantallas pequeñas */
+    padding: 10px; /* Reducir el padding en el contenedor de tarjetas */
+  }
+
+  .card {
+    font-size: medium; /* Ajustar el tamaño de fuente para que sea más legible */
+    padding: 10px; /* Reducir el padding en las tarjetas */
+  }
+
+  .card img {
+    width: 50%; /* Hacer que las imágenes ocupen todo el ancho de la tarjeta */
+  }
+}
+
+/* footer responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-buttons {
+    justify-content: center;
+    width: 100%;
+    }
+
+  .footer-left {
+    width: 100%;
+    text-align: left;
+  }
+}
+
 

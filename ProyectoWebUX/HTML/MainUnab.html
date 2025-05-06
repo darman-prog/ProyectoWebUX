@@ -17,6 +17,9 @@
                 <img src="../IMG/CampanaNoti.png" alt="Campana" class="campana">
                 <img src="../IMG/FacultadMedicina.png" alt="Logo UNAB" class="logo-unab">
             </div>
+            <button class="menu-toggle" aria-label="Abrir menú">
+                ☰
+            </button>
             <nav class="nav-menu">
                 <button  class="butonNav"><a href="Libreta.html" target="_blank">Libreta</a></button>
                 <button  class="butonNav"><a href="Eventos.html" target="_blank">Eventos</a></button>
@@ -27,10 +30,11 @@
             </nav>
         </div>
     </header>
-    <div class="ContenedorTitulo">
-        <h1 class="TituloPrincipal">Bienvenido al Portal Estudiantil UNAB</h1>
-    </div>
+
     <main class="main-content">
+        <div class="ContenedorTitulo">
+            <h1 class="TituloPrincipal">Bienvenido al Portal Estudiantil UNAB</h1>
+        </div>
         <div class="card-container">
             <div class="card">
                 <img src="../IMG/image 4.png" alt="Noticias">
@@ -65,7 +69,7 @@
         <div class="footer-container">
           <div class="footer-left">
             <!-- Logo de la UNAB -->
-            <img src="../IMG/LogoUnab.png" alt="Logo UNAB" class="logo-footer"> <!-- ← Pon aquí la ruta del logo -->
+            <img src="../IMG/LogoUnab.png" alt="Logo UNAB" class="logo-footer"> 
             <div class="footer-text">
               <p>Universidad Autónoma De Bucaramanga</p>
               <p>© Todos los derechos reservados</p>
@@ -86,7 +90,18 @@
         </div>
       </footer>
       
-
+      <!-- js de menu hamburguesa -->
+      <script>
+            const toggleBtn = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+        
+            toggleBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            });
+      </script>
+      
+      
+      
 
 </body>
 </html>
