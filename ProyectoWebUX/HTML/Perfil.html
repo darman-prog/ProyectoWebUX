@@ -3,54 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="https://unab.edu.co/wp-content/uploads/2022/09/cropped-favicon-naranja-32x32.png" sizes="32x32">
-  <title>Perfil Estudiante - UNAB</title>
   <link rel="stylesheet" href="../CSS/EstiloPerfil.css">
+  <link rel="icon" href="https://unab.edu.co/wp-content/uploads/2022/09/cropped-favicon-naranja-32x32.png" sizes="32x32">
+  <link rel="stylesheet" href="../CSS/Global.css">
+  <title>Perfil Estudiante</title>
+  <style>
+
+  </style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="header">
-    <div class="logo">
-      <img src="img/logo-unab.png" alt="Logo UNAB">
-    </div>
-    <nav class="nav">
-      <ul>
-        <li><a href="../HTML/MainUnab.html">Inicio</a></li>
-        <li><a href="../HTML/Cursos.html">Cursos</a></li>
-        <li><a href="../HTML/HorasLibres.html">Horas Libres</a></li>
-        <li><a href="../HTML/Login.html">Cerrar Sesión</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <div><strong>UNAB</strong> | Facultad de Ciencias de la Salud</div>
+  <nav>
+    <a href="../HTML/MainUnab.html">Inicio</a>
+    <a href="../HTML/Perfil.html">Perfil</a>
+    <a href="../HTML/Cursos.html">Cursos</a>
+    <a href="../HTML/Eventos.html">Eventos</a>
+    <a href="../HTML/Libreta.html">Libreta</a>
+  </nav>
+</header>
 
-  <!-- PERFIL DEL ESTUDIANTE -->
-  <main class="perfil-container">
-    <div class="perfil-card">
-      <div class="foto-perfil">
-        <img src="img/foto-estudiante.jpg" alt="Foto del Estudiante">
-      </div>
-      <div class="info-perfil">
-        <h2>Diego Meza</h2>
-        <p><strong>Programa:</strong> Ingeniería de Sistemas</p>
-        <p><strong>Código Estudiantil:</strong> 202212345</p>
-        <p><strong>Correo Institucional:</strong> diego.meza@unab.edu.co</p>
-        <p><strong>Horas Libres Completadas:</strong> 80</p>
-        <p><strong>Horas Faltantes:</strong> 40</p>
+<div class="container">
+  <aside class="sidebar">
+    <h2>Servicios</h2>
+    <a href="#">Biblioteca</a>
+    <a href="https://unabvirtual.unab.edu.co/" target="_blank">Canvas</a>
+    <a href="https://bienestar.unab.edu.co/">Bienestar</a>
+    <a href="#">Ayuda</a>
+    <a href="#">Cerrar sesión</a>
+  </aside>
 
-        <div class="acciones">
-          <button>Editar Perfil</button>
-          <button>Ver Mis Cursos</button>
-          <button>Mis Eventos Registrados</button>
+  <main class="main">
+    <div class="card">
+      <h3>Información Personal</h3>
+      <div class="info-row">
+        <img class="foto-perfil" src="../IMG/Imagen de WhatsApp 2025-04-14 a las 18.26.21_12278460.jpg" alt="Foto estudiante">
+        <div>
+          <div class="info-item">👤 <strong>Nombre:</strong> Diego Andres Meza Rodriguez</div>
+          <div class="info-item">📧 <strong>Email:</strong> dmeza396@unab.edu.co</div>
+          <div class="info-item">🆔 <strong>CC:</strong> 1029384756</div>
         </div>
+      </div>
+
+
+    <div class="card">
+      <h3>Información Académica</h3>
+      <div class="info-row">
+        <div class="info-item">🎓 <strong>ID Estudiante:</strong> 2023001</div>
+        <div class="info-item">📚 <strong>Programa:</strong> Medicina</div>
+        <div class="info-item">📅 <strong>Último periodo:</strong> 2024-2</div>
+        <div class="info-item">✅ <strong>Estado:</strong> Activo</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Accesos Rápidos</h3>
+      <div class="quick-access">
+        <div class="access-tile">Office 365</div>
+        <div class="access-tile">Correo UNAB</div>
+        <div class="access-tile">Aula Virtual</div>
+        <div class="access-tile">Biblioteca</div>
       </div>
     </div>
   </main>
+</div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <p>© 2024 Universidad Autónoma de Bucaramanga - Portal Estudiantil</p>
-  </footer>
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-left">
+            <!-- Logo de la UNAB -->
+            <div class="footer-text">
+              <p>Universidad Autónoma De Bucaramanga</p>
+              <p>© Todos los derechos reservados</p>
+            </div>
+          </div>
+      
+          <div class="footer-buttons">
+            <button class="footer-btn">Encuestas <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
+            
+
+            <button class="footer-btn">Consultas <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
+            
+
+            <button class="footer-btn">Preguntas frecuentes  <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
+            
+
+          </div>
+        </div>
+      </footer>
 
 </body>
 </html>

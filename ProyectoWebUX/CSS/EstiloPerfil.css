@@ -1,1 +1,196 @@
-zyYYY
+    body {
+      margin: 0;
+      background-color: #f4f8fb;
+    }
+
+    header {
+      background-color: #00558c;
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .foto-perfil {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00558c;
+    }
+
+    .info-row img{
+
+      margin-left: 25px;
+
+    }
+
+    nav a {
+      margin: 0 1rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #042c4b;
+      color: white;
+      padding: 2rem 1rem;
+      height: 100vh;
+    }
+
+    .sidebar h2 {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .sidebar a {
+      display: block;
+      margin: 1rem 0;
+      text-decoration: none;
+      color: white;
+      font-size: 0.95rem;
+    }
+
+    .main {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #00558c;
+    }
+
+    .info-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .info-item {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .quick-access {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .access-tile {
+      background-color: #e0f7fa;
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+      padding: 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #00558c;
+    }
+
+
+    button {
+      background-color: #00558c;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+  button:hover {
+    background-color: #003f6d;
+  }
+
+  .footer {
+  background-color: #3248ac;
+  color: white;
+  padding: 12px 20px;
+  font-family: Arial, sans-serif;
+  max-width: 1480px;
+  }
+
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Permite que se acomode bien en pantallas pequeñas */
+    gap: 16px;
+  }
+
+  /* Parte izquierda del footer: logo + texto */
+  .footer-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-width: 240px;
+  }
+
+  .logo-footer {
+    height: 40px;
+    margin-left: 25px;
+    transform: scaleX(20px) scaleY(20px); /* Ajuste de escala para el logo */
+  }
+
+  .footer-text p {
+    margin: 0;  
+    font-size: 14px;
+    text-align: center;
+    align-items: flex-start;
+
+  }
+
+  /* Parte derecha del footer: botones */
+  .footer-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex: 1;
+    min-width: 260px;
+  }
+
+  .footer-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+    gap: 12px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .footer-btn img {
+    height: 18px; /* Ajuste de tamaño del ícono */
+  }
+
+  /* Hover */
+  .footer-btn:hover {
+    background-color: #F58220;
+    color: white;
+    transform: scale(1.05);
+  }

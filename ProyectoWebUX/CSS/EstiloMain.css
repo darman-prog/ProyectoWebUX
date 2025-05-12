@@ -15,6 +15,38 @@ header {
   z-index: 1000;
 }
 
+
+/* Barra de búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    background-color: var(--blanco);
+    border-radius: 5px;
+    padding: 4px 10px;
+    box-shadow: 0 2px 6px var(--sombra);
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    padding: 6px;
+    width: 180px;
+}
+
+.search-bar button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.search-bar img{
+  width: 3.5vw;
+  height: 5.5vh;
+  margin-left: 15px;
+}
+
+
 .encabezado-container {
   display: flex;
   align-items: center;
@@ -90,13 +122,14 @@ button.modo-oscuro {
 }
 
 button.modo-oscuro img {
-  height: 25px;
-  width: 25px;
+  height: 35px;
+  width: 32px;
 }
 
 .menu-toggle {
   margin-left: 20px; 
 }
+
 /* final de estilos header */
 /* estilacions Cuerpo de pagina */
 .ContenedorTitulo {
@@ -182,7 +215,7 @@ main {
 /* ajustes para el footer y pagina general */
 
 .footer {
-  background-color: #191919;
+  background-color: #3248ac;
   color: white;
   padding: 12px 20px;
   font-family: Arial, sans-serif;

@@ -4,13 +4,3 @@
   font-family: 'Roboto';
 }
 
-:root{
-  --color-primario: #ffe000; /* Amarillo UNAB */
-  --color-secundario: #333;
-  --color-fondo: #f4f6f9;
-  --color-texto: #333;
-  --color-boton: #ffe000; /* Amarillo UNAB */
-  --color-boton-hover: #e0c200; /* Amarillo UNAB más oscuro */
-  --color-boton-texto: #fff;
-  --color-boton-texto-hover: #333;
-}
