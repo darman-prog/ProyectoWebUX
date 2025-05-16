@@ -1,57 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="https://unab.edu.co/wp-content/uploads/2022/09/cropped-favicon-naranja-32x32.png" sizes="32x32">
-  <title>Horas Libres - UNAB</title>
-  <link rel="stylesheet" href="../CSS/EstilosHoras.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="../CSS/EstilosLibreto.css">
+<link rel="stylesheet" href="../CSS/Global.css">
+<title>Libreto de Eventos</title>
+<style>
+
+</style>
 </head>
 <body>
-  <header>
-    <h1>Horas Libres</h1>
-    <nav>
-      <a href="main.html">Inicio</a>
-      <a href="perfil.html">Perfil</a>
-      <a href="eventos.html">Eventos</a>
-    </nav>
-  </header>
+<header>
+  
+  <h1>Libreto de Eventos</h1>
+  <p>Resumen de eventos en que participaste</p>
+</header>
 
-  <main class="container">
-    <section class="info-horas">
-      <h2>Resumen de Horas</h2>
-      <p><strong>Horas Completadas:</strong> 30 horas</p>
-      <p><strong>Horas Faltantes:</strong> 10 horas</p>
-    </section>
+<main>
+  <section class="events-container" id="eventsContainer">
+  </section>
+</main>
 
-    <section class="tabla-eventos">
-      <h2>Eventos que otorgan HL</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Evento</th>
-            <th>Horas Otorgadas</th>
-            <th>Fecha</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Ingeniotic</td>
-            <td>5 horas</td>
-            <td>10/05/2025</td>
-          </tr>
-          <tr>
-            <td>Ulibro</td>
-            <td>3 horas</td>
-            <td>15/08/2025</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+<footer class="PieDePagina">
 
-  <footer>
-    <p>© 2025 Universidad Autónoma de Bucaramanga</p>
-  </footer>
+  <div class="ContenedorHoras"> 
+
+    <p>Horas libres Totales <strong>24</strong></p>
+
+  </div>
+
+  <div class="ContenedorHoras">
+
+    <p> Horas libres Faltantes <br> <strong>56</strong>  </p>
+
+  </div>
+
+</footer>
+
+<script>
+  const events = [
+    {
+      name: "Taller: Tu sitio web con Figma",
+      inscriptionDate: "2025-03-12",
+      freeHours: 5
+    },
+    {
+      name: "Taller Cuerpos en Movimiento",
+      inscriptionDate: "2025-04-01",
+      freeHours: 3
+    },
+    {
+      name: " Taller: Escribir con imágenes",
+      inscriptionDate: "2025-05-18",
+      freeHours: 4
+    },
+    {
+      name: "Karaoke Fest",
+      inscriptionDate: "2025-05-16",
+      freeHours: 12
+    },
+  ];
+
+  function formatDate(d) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    const dateObj = new Date(d);
+    return dateObj.toLocaleDateString('es-ES', options);
+  }
+
+  function renderEvents() {
+    const container = document.getElementById('eventsContainer');
+    container.innerHTML = '';
+
+    events.forEach((event, index) => {
+      const card = document.createElement('article');
+      card.classList.add('event-card');
+
+      card.innerHTML = `
+        <div class="event-name">${event.name}</div>
+        <div><span class="event-label">Fecha de inscripción:</span><span class="event-date">${formatDate(event.inscriptionDate)}</span></div>
+        <div><span class="event-label">Horas libres otorgadas:</span><span class="event-hours">${event.freeHours} h</span></div>
+      `;
+
+      container.appendChild(card);
+    });
+  }
+
+  // Initialize
+  document.addEventListener('DOMContentLoaded', () => {
+    renderEvents();
+  });
+</script>
 </body>
 </html>
+

@@ -1,212 +1,364 @@
-    body {
-      margin: 0;
-      background-color: #f4f8fb;
-    }
 
-    header {
-      background-color: #00558c;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fbfeff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
 
-    .foto-perfil {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #00558c;
-    }
-
-    .info-row img{
-
-      margin-left: 25px;
-
-    }
-
-    nav a {
-      margin: 0 1rem;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .container {
-      display: flex;
-    }
-
-    .sidebar {
-      width: 200px;
-      background-color: #042c4b;
-      color: white;
-      padding: 2rem 1rem;
-      height: 100vh;
-    }
-
-    .sidebar h2 {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    .sidebar a {
-      display: block;
-      margin: 1rem 0;
-      text-decoration: none;
-      color: white;
-      font-size: 0.95rem;
-    }
-
-    .main {
-      flex: 1;
-      padding: 2rem;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      margin-bottom: 1.5rem;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #00558c;
-    }
-
-    .info-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-    }
-
-    .info-item {
-      flex: 1;
-      min-width: 250px;
-    }
-
-    .quick-access {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .access-tile {
-      background-color: #e0f7fa;
-      flex: 1;
-      min-width: 140px;
-      text-align: center;
-      padding: 1rem;
-      border-radius: 8px;
-      font-weight: bold;
-      color: #00558c;
-    }
-
-
-    button {
-      background-color: #00558c;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-
-  button:hover {
-    background-color: #003f6d;
-  }
-
-  /* Footer general */
-  /* ajustes para el footer y pagina general */
-  html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-
-
-  /* El contenedor principal ocupa el espacio restante */
-  main {
-    flex: 1;
-  }
-  /* ajustes para el footer y pagina general */
-
-  .footer {
-    background-color: #3248ac;
-    color: white;
-    padding: 12px 20px;
-    font-family: Arial, sans-serif;
-    width: 100%;
-  }
-
-  .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1300px;
-    margin: 0 auto;
-    flex-wrap: wrap; /* Permite que se acomode bien en pantallas pequeñas */
-    gap: 16px;
-  }
-
-  /* Parte izquierda del footer: logo + texto */
-  .footer-left {
+/* Barra de búsqueda */
+.Buscador {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    min-width: 240px;
+    margin-left: 30px;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin-right: 10px;
+    box-shadow: 0 2px 6px rgb(16, 190, 202);
   }
 
-  .logo-footer {
-    height: 40px;
-    margin-left: 25px;
-    transform: scaleX(20px) scaleY(20px); /* Ajuste de escala para el logo */
-  }
-
-  .footer-text p {
-    margin: 0;  
-    margin-left: 20px;
-    font-size: 14px;
-    text-align: center;
-  }
-
-  /* Parte derecha del footer: botones */
-  .footer-buttons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    flex: 1;
-    min-width: 260px;
-  }
-
-  .footer-btn {
-    background-color: white;
-    color: black;
+.Buscador input {
     border: none;
-    padding: 6px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    align-items: center;
-    gap: 12px;
-    transition: background-color 0.3s, transform 0.3s;
-  }
+    outline: none;
+    padding: 6px;
+    width: 200px;
+}
 
-  .footer-btn img {
-    height: 18px; /* Ajuste de tamaño del ícono */
-  }
+.encabezado-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
 
-  /* Hover */
-  .footer-btn:hover {
-    background-color: #F58220;
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 40px; 
+}
+
+.logo-section img:first-child {
+  height: 35px; 
+}
+
+.logo-unab {
+  height: 40px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 45px;
+  width: 100%;
+  margin-left: 40px; 
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #423333;
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+
+.butonNav {
+  background-color: #5CCCF6;
+  padding: 4px 12px;
+  margin-top: 3px;
+  width: 100px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.3s; /* Añadido para la transición de fondo */
+  
+}
+
+.butonNav:hover {
+  background-color: #F58220;
+  color: white;
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+.butonNav:hover a {
+  color: white; 
+}
+
+.menu-toggle {
+  margin-left: 20px; 
+}
+
+.tituloInformacionPersonal{
+margin-left: -15px;
+font-size: 25px;
+text-align: center;
+}
+
+/* apartado perfil */
+.foto-perfil {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-top: 5px;
+  object-fit: cover;
+  border: 3px solid #00558c;
+}
+
+.btn-upload {
+    background-color: #007bff;
     color: white;
-    transform: scale(1.05);
-  }
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-top: -20px;
+    margin-left: -20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-upload:hover {
+    background-color: #297fdb;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+
+.card {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.main {
+    max-width: 800px; /* Ancho máximo del contenedor */
+    margin: 30px auto; /* Centrar el contenedor */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.card {
+    background: #ffffff; /* Fondo blanco para las tarjetas */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espacio entre tarjetas */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    font-size: 16px;
+}
+
+.card h3 {
+    margin-top: 0; /* Sin margen superior */
+    color: #007bff; /* Color del título */
+    text-align: center; /* Centrar el texto del título */
+}
+
+.info-row, .info-row2, .info-row3 {
+    display: flex; /* Usar flexbox para alinear elementos */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    flex-direction: column;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+}
+
+.info-row {
+    margin-bottom: 10px; /* Espacio entre filas */
+}
+
+.foto-perfil {
+    width: 100px; /* Ancho de la foto de perfil */
+    height: 100px; /* Alto de la foto de perfil */
+    border-radius: 50%; /* Hacer la imagen circular */
+    object-fit: cover; /* Ajustar la imagen */
+    margin-right: 20px; /* Espacio a la derecha de la imagen */
+}
+
+.info-item, .info-item2, .info-item3 {
+    margin: 5px 10px; /* Espacio entre elementos de información */
+    font-size: 1rem; /* Tamaño de fuente */
+    flex: 1; /* Permitir que los elementos ocupen el espacio disponible */
+    text-align: center; /* Centrar el texto */
+    font-size: 18px;
+
+}
+
+.info-item2, .info-item3 {
+    flex: 1; /* Permitir que los elementos ocupen el espacio disponible */
+}
+
+/* Estilo para los cursos matriculados */
+.info-row3 {
+    flex-direction: column; /* Colocar los cursos en columna */
+}
+
+.quick-access {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.access-tile {
+  background-color: #e0f7fa;
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  color: #00558c;
+}
+
+
+button {
+  background-color: #00558c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #003f6d;
+}
+
+.quick-access {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre botones */
+}
+
+.access-tile {
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    text-align: center; /* Centrar texto */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.access-tile:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Fondo animado */
+html {
+  height: 100%;
+  background: linear-gradient(-45deg, #5262ee, #2ec9d4, #5897ad, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+
+
+/* final de body */
+/* Footer general */
+.footer {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #222;
+  padding: 12px 20px;
+  width: 100%;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap; 
+  gap: 26px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-width: 240px;
+}
+
+.logo-footer {
+  height: 40px;
+  margin-left: 25px;
+  transform: scaleX(20px) scaleY(20px); 
+}
+
+.footer-text p {
+  margin: 0 0 0 20px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 5px 7px rgba(202, 143, 16, 0.4);
+  max-width: 250px;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background-color: #ffffff;
+}
+
+
+/* Parte derecha del footer: botones */
+.footer-buttons {
+  display: flex;
+  margin-top: -15px;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: 260px;
+}
+
+.footer-btn {
+  background-color: #ffffff;
+  color: #222;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(16, 190, 202, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-btn:hover {
+  background-color: #F58220;
+  color: #fff;
+  transform: translateY(-2px);
+}
+

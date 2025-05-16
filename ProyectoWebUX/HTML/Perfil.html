@@ -7,91 +7,94 @@
   <link rel="icon" href="https://unab.edu.co/wp-content/uploads/2022/09/cropped-favicon-naranja-32x32.png" sizes="32x32">
   <link rel="stylesheet" href="../CSS/Global.css">
   <title>Perfil Estudiante</title>
-  <style>
-
-  </style>
 </head>
 <body>
 
-<header>
-  <div><strong>UNAB</strong> | Facultad de Ciencias de la Salud</div>
-  <nav>
-    <a href="../HTML/MainUnab.html">Inicio</a>
-    <a href="../HTML/Perfil.html">Perfil</a>
-    <a href="../HTML/Cursos.html">Cursos</a>
-    <a href="../HTML/Eventos.html">Eventos</a>
-    <a href="../HTML/Libreta.html">Libreta</a>
-  </nav>
-</header>
+    <header>
+        <div class="encabezado-container">
+            <div class="logo-section">
+                <img src="../IMG/CampanaNoti.png" alt="Campana" class="campana">
+                <img src="../IMG/FacultadMedicina.png" alt="Logo UNAB" class="logo-unab">
+            </div>
 
-<div class="container">
-  <aside class="sidebar">
-    <h2>Servicios</h2>
-    <a href="#">Biblioteca</a>
-    <a href="https://unabvirtual.unab.edu.co/" target="_blank">Canvas</a>
-    <a href="https://bienestar.unab.edu.co/">Bienestar</a>
-    <a href="#">Ayuda</a>
-    <a href="#">Cerrar sesión</a>
-  </aside>
+            <div class="Buscador">
+                <input type="text" placeholder="Buscar en el portal..." aria-label="Buscar">
+            </div>
 
-  <main class="main">
-    <div class="card">
-      <h3>Información Personal</h3>
-      <div class="info-row">
-        <img class="foto-perfil" src="../IMG/Imagen de WhatsApp 2025-04-14 a las 18.26.21_12278460.jpg" alt="Foto estudiante">
-        <div>
-          <div class="info-item">👤 <strong>Nombre:</strong> Diego Andres Meza Rodriguez</div>
-          <div class="info-item">📧 <strong>Email:</strong> dmeza396@unab.edu.co</div>
-          <div class="info-item">🆔 <strong>CC:</strong> 1029384756</div>
+
+            <nav class="nav-menu">
+                <button class="butonNav"><a href="Libreta.html" target="_blank">Libreta</a></button>
+                <button class="butonNav"><a href="Eventos.html" target="_blank">Eventos</a></button>
+                <button class="butonNav"><a href="Cursos.html" target="_blank">Cursos</a></button>
+                <button class="butonNav"><a href="Perfil.html" target="_blank">Perfil</a></button>
+                <button class="butonNav"><a href="MainUnab.html" target="_blank">Inicio</a></button>
+            </nav>
         </div>
-      </div>
+    </header>
 
 
-    <div class="card">
-      <h3>Información Académica</h3>
-      <div class="info-row">
-        <div class="info-item">🎓 <strong>ID Estudiante:</strong> 2023001</div>
-        <div class="info-item">📚 <strong>Programa:</strong> Medicina</div>
-        <div class="info-item">📅 <strong>Último periodo:</strong> 2024-2</div>
-        <div class="info-item">✅ <strong>Estado:</strong> Activo</div>
-      </div>
-    </div>
+    <main class="main">
+        <div class="card">
+            <h3 class="tituloInformacionPersonal">Información Personal</h3>
+            <div class="info-row">
+                <label for="profilePicInput" class="btn-upload">Subir Foto</label>
+                <img class="foto-perfil" src="../IMG/Imagen de WhatsApp 2025-04-14 a las 18.26.21_12278460.jpg" alt="Foto estudiante">
+                <div>
+                    <div class="info-item">👤 <strong>Nombre:</strong> Diego Andres Meza Rodriguez</div>
+                    <div class="info-item">📧 <strong>Email:</strong> dmeza396@unab.edu.co</div>
+                    <div class="info-item">🆔 <strong>CC:</strong> 1029384756</div>
+                </div>
+            </div>
+        </div>
 
-    <div class="card">
-      <h3>Accesos Rápidos</h3>
-      <div class="quick-access">
-        <div class="access-tile">Office 365</div>
-        <div class="access-tile">Correo UNAB</div>
-        <div class="access-tile">Aula Virtual</div>
-        <div class="access-tile">Biblioteca</div>
-      </div>
-    </div>
-  </main>
-</div>
+
+
+
+        <div class="card">
+            <h3>Información Académica</h3>
+            <div class="info-row2">
+                <div class="info-item2">🎓 <strong>ID Estudiante:</strong> U00079690</div>
+                <div class="info-item2">📚 <strong>Programa:</strong> Ingeniería en Sistemas</div>
+                <div class="info-item2">📅 <strong>Último periodo:</strong> 2024-2</div>
+                <div class="info-item2">✅ <strong>Estado:</strong> Activo</div>
+            </div>
+        </div>
+
+
+
+        <div class="card">
+            <h3>Accesos Rápidos</h3>
+            <div class="quick-access">
+                <a href="https://miportalu.unab.edu.co/Archivos/?p=AulasVirtuales/Teams_descargar_usuario.pdf" class="access-tile">Office 365</a>
+                <a href="https://correo.unab.edu.co/" class="access-tile">Correo UNAB</a>
+                <a href="https://unabvirtual.unab.edu.co/" class="access-tile">UNAB Virtual</a>
+                <a href="https://unab.edu.co/sistema-de-bibliotecas-unab/" class="access-tile">Biblioteca</a>
+            </div>
+        </div>
+    </main>
+
 
     <footer class="footer">
         <div class="footer-container">
-          <div class="footer-left">
-            <!-- Logo de la UNAB -->
-            <div class="footer-text">
-              <p>Universidad Autónoma De Bucaramanga</p>
-              <p>© Todos los derechos reservados</p>
+            <div class="footer-left">
+                <!-- Logo de la UNAB -->
+                <div class="footer-text">
+                    <p>Universidad Autónoma De Bucaramanga <br> © Todos los derechos reservados</p>
+                </div>
             </div>
-          </div>
-      
-          <div class="footer-buttons">
-            <button class="footer-btn">Encuestas <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
-            
+        
+            <div class="footer-buttons">
+                    <button class="footer-btn">Encuestas <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
+                    
 
-            <button class="footer-btn">Consultas <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
-            
+                    <button class="footer-btn">Consultas <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
+                    
 
-            <button class="footer-btn">Preguntas frecuentes  <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
-            
+                    <button class="footer-btn">Preguntas frecuentes  <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
+                
 
-          </div>
+            </div>
         </div>
-      </footer>
-
+    </footer>
 </body>
 </html>
