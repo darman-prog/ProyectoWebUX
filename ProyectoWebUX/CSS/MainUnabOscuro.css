@@ -3,14 +3,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
-
 }
 
 body {
-  animation: fadeOut 0.5s ease forwards;
+  opacity: 0;
   animation: fadeIn 0.7s ease forwards;
-
 }
 
 @keyframes fadeIn {
@@ -18,17 +15,12 @@ body {
   to { opacity: 1; }
 }
 
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #fbfeff;
+  background-color: #0f4e63;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -76,7 +68,13 @@ header {
   height: 40px;
 }
 
-/* Navegación + luna */
+.ModoOscuro{
+    background-color: transparent;
+
+
+}
+
+/* Navegación + sol */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -158,14 +156,14 @@ button.modo-oscuro img {
 
 body {
   padding-top: 60px;
-  background: #1f9cf0;
+  background: #00558c;
 }
 
 .main-content{
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #F5F5F5;
+  background-color: #0d0b22;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -178,15 +176,17 @@ body {
 }
 
 .card {
-  background-color: white;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  background-color: rgb(20, 13, 78);
+  border-radius: 12px;
+  padding: 20px;
+  color: wheat;
+  font-size: larger;
+  text-align: center;
   display: flex;
   align-items: center;
-  text-align: center;
-  font-size: larger;
+  justify-content: center;
+  box-shadow: 0 12px 24px rgba(16, 131, 146, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -220,7 +220,7 @@ main {
 /* ajustes para el footer y pagina general */
 
 .footer {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(25, 79, 88, 0.9);
   color: #222;
   padding: 12px 20px;
   width: 100%;

@@ -1,89 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Universitario</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0f0f0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
-        .formulario {
-            background: #fff;
-            padding: 25px 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            width: 350px;
-        }
-        .formulario h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        .formulario label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
-        }
-        .formulario input, .formulario select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        .formulario button {
-            width: 100%;
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .formulario button:hover {
-            background-color: #45a049;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiPortal UNAB - Clon</title>
+  <link rel="stylesheet" href="../CSS/EstiloCrearUsuario.css">
 </head>
 <body>
+  <header class="main-header">
+    <div class="logo">MiPortal <span>TI</span></div>
+    <div class="user-info">
+      <p>Hoy es, 15 de Mayo</p>
+      <strong>Diego Andres Meza Rodriguez</strong>
+      <div class="user-buttons">
+        <button class="btn">Perfil</button>
+        <button class="btn logout">Cerrar sesión</button>
+      </div>
+    </div>
+  </header>
 
-<div class="formulario">
-    <h2>Crear Usuario</h2>
-    <form action="#" method="POST">
+  <nav class="top-nav">
+    <div class="nav-options">
+      <span>Servicios Electrónicos</span>
+      <span>Servicios para Estudiantes</span>
+      <span>Apoyo al Estudiante</span>
+      <span>Información Administrativa</span>
+    </div>
+    <div class="quick-access">
+      <button class="btn">Hostal</button>
+      <button class="btn">Contacto</button>
+      <button class="btn highlight">Accesos rápidos</button>
+    </div>
+  </nav>
 
-        <label for="nombre">Nombres y Apellidos</label>
-        <input type="text" id="nombre" name="nombre" required>
+  <main class="news-section">
+    <div class="news-column">
+      <!-- Tarjeta -->
+      <div class="card">
+        <img src="https://via.placeholder.com/100x80" alt="Noticia">
+        <div class="card-content">
+          <p class="date">fecha 13-MAY-25</p>
+          <p class="title">Cursos vacacionales intersemestrales de inglés para estudiantes pregrado profesional UNAB</p>
+        </div>
+      </div>
 
-        <label for="cedula">Cédula</label>
-        <input type="text" id="cedula" name="cedula" required>
+      <div class="card">
+        <img src="https://via.placeholder.com/100x80" alt="Evento">
+        <div class="card-content">
+          <p class="date">fecha 13-MAY-25</p>
+          <p class="title">UNAB es aliada clave en la 7ª Conferencia contra la Corrupción en las Américas</p>
+        </div>
+      </div>
+    </div>
 
-        <label for="contrasena">Contraseña</label>
-        <input type="password" id="contrasena" name="contrasena" required>
+    <div class="news-column">
+      <div class="card">
+        <img src="https://via.placeholder.com/100x80" alt="Pruebas">
+        <div class="card-content">
+          <p class="date">fecha 09-ABR-25</p>
+          <p class="title">Pruebas de informática para programas presenciales (sábado 7 de junio)</p>
+        </div>
+      </div>
+    </div>
+  </main>
 
-        <label for="confirmar_contrasena">Verificar Contraseña</label>
-        <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
-
-        <label for="genero">Género</label>
-        <select id="genero" name="genero" required>
-            <option value="">Seleccione...</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Femenino">Femenino</option>
-            <option value="Otro">Otro</option>
-        </select>
-
-        <button type="submit">Registrarse</button>
-    </form>
-</div>
-
+  <footer class="footer">
+    <button class="btn">+ Noticias</button>
+  </footer>
 </body>
 </html>

@@ -120,7 +120,7 @@ text-align: center;
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9rem;
-    margin-top: -20px;
+    margin-top: -10px;
     margin-left: -20px;
     transition: background-color 0.3s ease;
 }
@@ -208,16 +208,7 @@ input[type="file"] {
   flex-wrap: wrap;
 }
 
-.access-tile {
-  background-color: #e0f7fa;
-  flex: 1;
-  min-width: 140px;
-  text-align: center;
-  padding: 1rem;
-  border-radius: 8px;
-  font-weight: bold;
-  color: #00558c;
-}
+
 
 
 button {
@@ -241,6 +232,14 @@ button:hover {
 }
 
 .access-tile {
+    background-color: #e0f7fa;
+    flex: 1;
+    min-width: 140px;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #00558c;
     background-color: #007bff; /* Color de fondo azul */
     color: white; /* Color del texto */
     padding: 10px 15px; /* Espaciado interno */
@@ -250,8 +249,26 @@ button:hover {
     transition: background-color 0.3s; /* Transición suave */
 }
 
+.access-tileLast{
+    margin-left: 8.5vw;
+    min-width: 110px;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #00558c;
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    text-align: center; /* Centrar texto */
+    transition: background-color 0.3s; /* Transición suave */
+    width: 20vw;
+}
+.access-tileLast:hover,
 .access-tile:hover {
-    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+    background-color: #0056b3; 
 }
 
 html, body {

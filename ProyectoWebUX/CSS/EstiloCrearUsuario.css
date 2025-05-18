@@ -1,0 +1,122 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #f4f6f8;
+  color: #222;
+}
+
+.main-header {
+  background-color: #1e2a3a;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.logo span {
+  color: orange;
+}
+
+.user-info {
+  text-align: right;
+}
+
+.user-buttons {
+  margin-top: 5px;
+}
+
+.btn {
+  background-color: #ddd;
+  border: none;
+  padding: 6px 10px;
+  margin: 2px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.logout {
+  background-color: #a11;
+  color: white;
+}
+
+.top-nav {
+  background-color: #f8f9fa;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ccc;
+}
+
+.nav-options span {
+  margin-right: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.quick-access .btn {
+  margin-left: 8px;
+}
+
+.highlight {
+  background-color: #f58220;
+  color: white;
+}
+
+.news-section {
+  display: flex;
+  padding: 20px;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.news-column {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.card img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 10px;
+  flex: 1;
+}
+
+.card-content .date {
+  font-size: 12px;
+  color: #777;
+  margin: 0 0 5px 0;
+}
+
+.card-content .title {
+  font-size: 14px;
+  margin: 0;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #eaeaea;
+}
