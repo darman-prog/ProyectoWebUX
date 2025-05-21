@@ -1,279 +1,115 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="contenedorMain" >
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/Global.css">
-  <link rel="stylesheet" href="../CSS/EstilosLibreto.css">
-  <link rel="icon" href="https://unab.edu.co/wp-content/uploads/2022/09/cropped-favicon-naranja-32x32.png" sizes="32x32">
-  <script defer src="../JS/Libreta.js"></script>
-  <title>Libreta Estudiantil</title>
-</head>
-   <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .contenedor-carrusel {
-            position: relative;
-            max-width: 800px;
-            width: 100%;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        
-        .carrusel {
-            position: relative;
-            height: 400px;
-            overflow: hidden;
-        }
-        
-        .carrusel-interior {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-        
-        .carrusel-imagen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        
-        .carrusel-imagen.activa {
-            opacity: 1;
-        }
-        
-        .carrusel-navegacion {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            transform: translateY(-50%);
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-            z-index: 10;
-        }
-        
-        .carrusel-boton {
-            background-color: rgba(255, 255, 255, 0.7);
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .carrusel-boton:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-            transform: scale(1.1);
-        }
-        
-        .carrusel-boton svg {
-            width: 20px;
-            height: 20px;
-            fill: #333;
-        }
-        
-        .carrusel-descripcion {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 15px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        .mostrar-descripcion .carrusel-descripcion {
-            transform: translateY(0);
-        }
-        
-        .carrusel-titulo {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-        
-        .carrusel-texto {
-            font-size: 14px;
-            line-height: 1.4;
-        }
-        
-        .carrusel-indicadores {
-            display: flex;
-            justify-content: center;
-            padding: 15px 0;
-        }
-        
-        .indicador {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #ddd;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .indicador.activo {
-            background-color: #666;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://unab.edu.co/congresofacultadsalud/wp-content/uploads/sites/4/2022/09/cropped-favicon-azul-32x32.png" sizes="32x32">
+    <link rel="stylesheet" href="../CSS/Global.css">
+    <link rel="stylesheet" href="../CSS/EstilosLibreto.css">
+    <script defer src="../JS/Libreta.js"></script>
+    <title>Libreta Estudiantil</title>
 </head>
 <body>
-    <div class="contenedor-carrusel">
-        <div class="carrusel">
-            <div class="carrusel-interior" id="carruselInterior">
-                <!-- Imágenes (usamos placeholders) -->
-                <img src="/api/placeholder/800/400" alt="Evento 1" class="carrusel-imagen activa" data-indice="0">
-                <img src="/api/placeholder/800/400" alt="Evento 2" class="carrusel-imagen" data-indice="1">
-                <img src="/api/placeholder/800/400" alt="Evento 3" class="carrusel-imagen" data-indice="2">
-                <img src="/api/placeholder/800/400" alt="Evento 4" class="carrusel-imagen" data-indice="3">
-                
-                <!-- Descripciones -->
-                <div class="carrusel-descripcion">
-                    <h3 class="carrusel-titulo">Título del Evento 1</h3>
-                    <p class="carrusel-texto">Descripción detallada del primer evento. Aquí puedes añadir toda la información relevante sobre este evento en particular.</p>
-                </div>
+    
+    <header >
+        <div class="encabezado-container">
+            <div class="logo-section">
+                <img src="../IMG/CampanaNoti.png" alt="Campana" class="campana">
+                <img src="../IMG/FacultadMedicina.png" alt="Logo UNAB" class="logo-unab">
             </div>
-            
-            <!-- Botones de navegación -->
-            <div class="carrusel-navegacion">
-                <button class="carrusel-boton" id="botonAnterior">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
-                    </svg>
-                </button>
-                <button class="carrusel-boton" id="botonSiguiente">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
-                    </svg>
-                </button>
+            <div class="Buscador">
+                <input type="text" placeholder="Buscar en el portal..." aria-label="Buscar">
+            </div>
+            <nav class="nav-menu">
+                <button class="butonNav"><a href="Libreta.html" target="_blank">Libreta</a></button>
+                <button class="butonNav"><a href="Eventos.html" target="_blank">Eventos</a></button>
+                <button class="butonNav"><a href="Cursos.html" target="_blank">Cursos</a></button>
+                <button class="butonNav"><a href="Perfil.html" target="_blank">Perfil</a></button>
+                <button class="butonNav"><a href="MainUnab.html" target="_blank">Inicio</a></button>
+            </nav>
+        </div>
+    </header>
+    <br>
+    <div class="contenedor">
+        <div class="cabecera">
+            <h1>Libreta Estudiantil</h1>
+        </div>
+        
+        <div class="info-estudiante">
+            <div>
+                <strong>Estudiante:</strong> <span id="nombreEstudiante">Diego Andres Meza Rodriguez</span>
+            </div>
+            <div>
+                <strong>Programa:</strong> <span id="programaEstudiante">Medicina</span>
+            </div>
+            <div>
+                <strong>ID:</strong> <span id="idEstudiante">U00123456</span>
             </div>
         </div>
         
-        <!-- Indicadores -->
-        <div class="carrusel-indicadores" id="indicadores"></div>
-    </div>
-    
-    <script>
-        // Datos de los eventos - Puedes expandir esta lista fácilmente
-        const datosEventos = [
-            {
-                titulo: "Título del Evento 1",
-                descripcion: "Descripción detallada del primer evento. Aquí puedes añadir toda la información relevante sobre este evento en particular."
-            },
-            {
-                titulo: "Título del Evento 2",
-                descripcion: "Descripción del segundo evento con todos los detalles importantes que los visitantes deberían conocer."
-            },
-            {
-                titulo: "Título del Evento 3",
-                descripcion: "Toda la información sobre el tercer evento que se muestra en el carrusel de imágenes."
-            },
-            {
-                titulo: "Título del Evento 4",
-                descripcion: "Descripción completa del cuarto evento con todos los datos relevantes para los usuarios."
-            }
-        ];
+        <div class="progreso-contenedor">
+            <h2>Progreso de Horas Libres</h2>
+            <div class="progreso-barra-contenedor">
+                <div id="progresoHoras" class="progreso-barra" style="width: 0%">0%</div>
+            </div>
+            <div id="resumenHoras">
+                <strong>Horas acumuladas:</strong> <span id="horasAcumuladas">0</span> | 
+                <strong>Horas restantes:</strong> <span id="horasRestantes">90</span> | 
+                <strong>Total requerido:</strong> 90 horas
+            </div>
+        </div>
         
-        // Funcionalidad del carrusel
-        document.addEventListener('DOMContentLoaded', function() {
-            const carruselInterior = document.getElementById('carruselInterior');
-            const imagenes = document.querySelectorAll('.carrusel-imagen');
-            const botonAnterior = document.getElementById('botonAnterior');
-            const botonSiguiente = document.getElementById('botonSiguiente');
-            const descripcion = document.querySelector('.carrusel-descripcion');
-            const titulo = document.querySelector('.carrusel-titulo');
-            const texto = document.querySelector('.carrusel-texto');
-            const contenedorIndicadores = document.getElementById('indicadores');
-            
-            let indiceActual = 0;
-            const totalImagenes = imagenes.length;
-            
-            // Crear indicadores
-            function crearIndicadores() {
-                for (let i = 0; i < totalImagenes; i++) {
-                    const indicador = document.createElement('div');
-                    indicador.classList.add('indicador');
-                    if (i === 0) indicador.classList.add('activo');
-                    indicador.dataset.indice = i;
+        <div class="lista-eventos" id="listaEventos">
+            <!-- Los eventos se cargarán dinámicamente desde JavaScript -->
+        </div>
+        
+        <div class="resumen-total">
+            <div>
+                <strong>Total Horas Acumuladas:</strong> <span id="totalHorasAcumuladas">0</span>
+            </div>
+            <div>
+                <strong>Horas Restantes:</strong> <span id="totalHorasRestantes">90</span>
+                <span id="badgeEstado" class="badge-pendiente">Pendiente</span>
+            </div>
+        </div>
+    </div>
+    <br>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-text">
+                    <p>Universidad Autónoma De Bucaramanga <br> © Todos los derechos reservados</p>
+                </div>
+            </div>
+            <div class="footer-buttons">
+                    <a href="https://pasaporte.unab.edu.co/" class="footer-btn">
+                    Encuestas
+                    <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor">
+                    </a>
                     
-                    indicador.addEventListener('click', function() {
-                        cambiarImagen(parseInt(this.dataset.indice));
-                    });
-                    
-                    contenedorIndicadores.appendChild(indicador);
-                }
-            }
-            
-            // Actualizar descripción
-            function actualizarDescripcion() {
-                titulo.textContent = datosEventos[indiceActual].titulo;
-                texto.textContent = datosEventos[indiceActual].descripcion;
-            }
-            
-            // Cambiar imagen
-            function cambiarImagen(nuevoIndice) {
-                imagenes[indiceActual].classList.remove('activa');
-                document.querySelectorAll('.indicador')[indiceActual].classList.remove('activo');
-                
-                indiceActual = nuevoIndice;
-                
-                // Manejar índices fuera de rango
-                if (indiceActual < 0) indiceActual = totalImagenes - 1;
-                if (indiceActual >= totalImagenes) indiceActual = 0;
-                
-                imagenes[indiceActual].classList.add('activa');
-                document.querySelectorAll('.indicador')[indiceActual].classList.add('activo');
-                actualizarDescripcion();
-            }
-            
-            // Inicializar
-            crearIndicadores();
-            actualizarDescripcion();
-            
-            // Eventos de clic para botones de navegación
-            botonAnterior.addEventListener('click', function() {
-                cambiarImagen(indiceActual - 1);
-            });
-            
-            botonSiguiente.addEventListener('click', function() {
-                cambiarImagen(indiceActual + 1);
-            });
-            
-            // Mostrar/ocultar descripción al hacer clic en la imagen
-            carruselInterior.addEventListener('click', function() {
-                carruselInterior.classList.toggle('mostrar-descripcion');
-            });
+                    <a href="https://unab.edu.co/contactanos/" class="footer-btn">
+                    Consultas 
+                    <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor">
+                    </a>
+
+                    <a href="https://clic.kayako.com/" class="footer-btn">
+                    Preguntas frecuentes
+                    <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor">
+                    </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+            document.addEventListener("DOMContentLoaded", () => {
+            const contenedor = document.getElementById("contenedorMain");
+            setTimeout(() => {
+                contenedor.style.left = "0";
+            }, 80); 
         });
+
+
     </script>
 </body>
 </html>
