@@ -100,16 +100,17 @@ header {
 margin-left: -15px;
 font-size: 25px;
 text-align: center;
+
 }
 
 /* apartado perfil */
 .foto-perfil {
   width: 120px;
   height: 120px;
-  border-radius: 50%;
   margin-top: 5px;
   object-fit: cover;
   border: 3px solid #00558c;
+
 }
 
 .btn-upload {
@@ -126,13 +127,12 @@ text-align: center;
 }
 
 .btn-upload:hover {
-    background-color: #297fdb;
+    background-color: #003f6d;
 }
 
 input[type="file"] {
     display: none;
 }
-
 
 .card {
   background-color: rgb(255, 255, 255);
@@ -207,8 +207,6 @@ input[type="file"] {
   gap: 1rem;
   flex-wrap: wrap;
 }
-
-
 
 
 button {
@@ -297,8 +295,6 @@ html {
 	}
 }
 
-
-
 /* final de body */
 /* Footer general */
 .footer {
@@ -379,3 +375,83 @@ html {
   transform: translateY(-2px);
 }
 
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    background: none;
+    font-size: 1.8rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #004080;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .butonNav {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: left;
+  }
+
+  .butonNav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+  }
+
+  .Buscador input {
+    width: 100%;
+  }
+}
+
+
+
+
+/* footer responsive */
+@media (max-width: 768px) {
+  .access-tileLast{
+    margin-left: 22.5vw;
+    min-width: 110px;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #00558c;
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Color del texto */
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    text-decoration: none; /* Sin subrayado */
+    text-align: center; /* Centrar texto */
+    transition: background-color 0.3s; /* Transición suave */
+    width: 20vw;
+  }
+
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-buttons {
+    justify-content: center;
+    width: 100%;
+    }
+
+  .footer-left {
+    width: 100%;
+    text-align: left;
+  }
+}

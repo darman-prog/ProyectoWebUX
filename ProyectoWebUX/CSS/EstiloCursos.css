@@ -1,69 +1,607 @@
-/* cursos.css */
-
-/* General */
-body {
-  font-family: 'Arial', sans-serif;
+html, body {
   margin: 0;
   padding: 0;
-  background-color: #f9f9f9;
+  overflow-x: hidden;
+  background: linear-gradient(-45deg, #5262ee, #2ec9d4, #5897ad, #23d5ab);
+
+}
+
+html {
+  height: 100%;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 header {
-  background-color: #e9a427; 
-  color: white;
-  padding: 20px;
-  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fbfeff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
-nav {
-  margin-top: 10px;
+/* Barra de búsqueda */
+.Buscador {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin-right: 10px;
+    box-shadow: 0 2px 6px rgb(16, 190, 202);
+  }
+
+.Buscador input {
+    border: none;
+    outline: none;
+    padding: 6px;
+    width: 200px;
 }
 
-nav a {
-  color: white;
-  margin: 0 10px;
+.encabezado-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 40px; 
+}
+
+.logo-section img:first-child {
+  height: 35px; 
+}
+
+.logo-unab {
+  height: 40px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 45px;
+  width: 100%;
+  margin-left: 40px; 
+}
+
+.nav-menu a {
   text-decoration: none;
-  font-weight: bold;
+  color: #423333;
+  font-size: 15px;
+  transition: color 0.3s;
 }
 
-nav a:hover {
-  text-decoration: underline;
+
+.butonNav {
+  background-color: #5CCCF6;
+  padding: 4px 12px;
+  margin-top: 3px;
+  width: 100px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.3s; /* Añadido para la transición de fondo */
+  
 }
 
-.container {
-  padding: 30px;
+.butonNav:hover {
+  background-color: #F58220;
+  color: white;
+  transform: scale(1.05);
+  transition: transform 0.3s;
 }
 
-h1, h2 {
-  color: #8600dd; /* Verde oscuro UNAB */
+.butonNav:hover a {
+  color: white; 
 }
 
-/* Tabla de cursos */
-.tabla-cursos table {
+input[type="file"] {
+    display: none;
+}
+
+/* comienzo de body */
+/* EstiloCursos.css */
+
+/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  line-height: 1.6;
+}
+
+h1 {
+  display: block;
+  text-align: center;
+  color: #074b8f;
+  margin: 2rem auto;
+  padding: 1.2rem 2rem;
+  font-weight: 500;
+  font-size: clamp(2rem, 4vw, 3.2rem); /* Tamaño responsivo más equilibrado */
+  max-width: 80%;
+  border-radius: 0.75rem;
+  background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Fondo con degradado sutil */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más natural */
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  letter-spacing: 0.5px;
+}
+
+/* Efecto hover opcional para interacción */
+h1:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Contenedor principal de cursos */
+.cursos-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  gap: 2rem;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .cursos-container {
+    flex-direction: column;
+  }
+}
+
+/* Lista de cursos */
+.lista-cursos {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.curso {
+  background: #ffffff;
+  border: none;
+  border-left: 4px solid transparent;
+  padding: 1rem 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.curso:hover {
+  background-color: #f5f5f5;
+  transform: translateX(5px);
+}
+
+.curso:focus {
+  outline: none;
+}
+
+.curso[data-curso="1"] {
+  border-left-color: #bb7372;
+}
+
+.curso[data-curso="2"] {
+  border-left-color: #b99d46;
+}
+
+.curso[data-curso="3"] {
+  border-left-color: #75a760;
+}
+
+.curso[data-curso="4"] {
+  border-left-color: #426585;
+}
+
+.curso[data-curso="5"] {
+  border-left-color: #453272;
+}
+
+/* Colores por curso (según data-id o puedes usar clases si prefieres) */
+[data-id="1"] { background-color: #bb7372; }       /* Cálculo Diferencial */
+[data-id="2"] { background-color: #b99d46; }       /* Fundamentos de programación */
+[data-id="3"] { background-color: #75a760; }       /* Álgebra Lineal */
+[data-id="4"] { background-color: #426585; }       /* Seminario de ingeniería */
+[data-id="5"] { background-color: #453272; }       /* Expresión */
+
+
+.curso.activo {
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+}
+
+/* Información del curso */
+.info-curso {
+  flex: 1;
+  margin-top: 5vh;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: all 0.3s ease;
+  min-height: 300px;
+}
+
+.info-curso:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.info-curso h2 {
+  margin-top: 0;
+  color: #003366;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.info-curso h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: #ff9900;
+  border-radius: 2px;
+}
+
+.info-curso p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Calendario */
+.calendar-container {
+  max-width: 1200px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+}
+
+table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.884);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #ffffff;
 }
 
-.tabla-cursos thead {
-  background-color: #e9a427;
-  color: white;
-}
-
-.tabla-cursos th, .tabla-cursos td {
-  padding: 12px;
-  border: 1px solid #ddd;
+thead th {
+  background-color: #003366;
+  color: #ffffff;
+  padding: 1rem;
+  font-weight: 500;
   text-align: center;
 }
 
-.tabla-cursos tbody tr:nth-child(even) {
-  background-color: #f2f2f2;
+tbody tr:nth-child(even) {
+  background-color: rgba(240, 240, 240, 0.3);
 }
 
-footer {
-  background-color: #e9a427;
-  color: white;
+tbody td {
+  padding: 1rem;
   text-align: center;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+td.course {
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+td.course::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+td.course:hover::before {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-curso {
+  animation: fadeIn 0.4s ease-out;
+}
+
+/* Estilos para el horario dentro de info-curso */
+#horario {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+#horario h3 {
+  margin-top: 0;
+  color: #003366;
+  font-size: 1.3rem;
+}
+
+#horario ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#horario li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#horario li:last-child {
+  border-bottom: none;
+}
+/* Contenedor general */
+.calendar-container {
+  max-width: 900px;
+  margin: 30px auto;
   padding: 15px;
-  margin-top: 30px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Encabezado de tabla */
+thead th {
+  background-color: #f58220;
+  color: white;
+  font-size: 1.1em;
+}
+
+/* Celdas vacías */
+.empty {
+  background-color: #f4f4f4;
+  color: #999;
+}
+
+
+
+/* Texto en celdas de cursos */
+.course {
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Hover con animación */
+.course:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+/* Subtexto dentro del curso */
+
+
+/* Fade-in animation para el contenedor */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* Botones adicionales */
+.btn-accion {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #0066cc;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  margin-top: 1rem;
+}
+
+.btn-accion:hover {
+  background-color: #003366;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividad para el calendario */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.9rem;
+  }
+  
+  thead th, tbody td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  table {
+    font-size: 0.75rem;
+  }
+  
+  td.course {
+    font-size: 0.7rem;
+  }
+}
+/* footer */
+/* Footer general */
+.footer {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #222;
+  padding: 12px 20px;
+  width: 100%;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap; 
+  gap: 26px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-width: 240px;
+}
+
+.logo-footer {
+  height: 40px;
+  margin-left: 25px;
+  transform: scaleX(20px) scaleY(20px); 
+}
+
+.footer-text p {
+  margin: 0 0 0 20px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 5px 7px rgba(202, 143, 16, 0.4);
+  max-width: 250px;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background-color: #ffffff;
+}
+
+
+/* Parte derecha del footer: botones */
+.footer-buttons {
+  display: flex;
+  margin-top: -15px;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: 260px;
+}
+
+.footer-btn {
+  background-color: #ffffff;
+  color: #222;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(16, 190, 202, 0.6);
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-btn:hover {
+  background-color: #F58220;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    background: none;
+    font-size: 1.8rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #004080;
+    width: 100%;
+    padding: 1rem 0;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .butonNav {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: left;
+  }
+
+  .butonNav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+  }
+
 }

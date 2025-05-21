@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="../CSS/Global.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="icon" href="https://unab.edu.co/wp-content/uploads/2022/09/cropped-favicon-naranja-32x32.png" sizes="32x32">
+  <script defer src="../JS/Login.js"></script>
 </head>
 <body>
   <div class="main-container">
@@ -26,7 +27,7 @@
       <!-- Login -->
       <div class="right-panel">
         <div class="login-container">
-          <img src="../IMG/MedicinaUnab.png" alt="Logo Universidad" class="login-logo">
+          <img src="https://i.postimg.cc/HWXM29tS/Medicina-Unab.png" alt="Logo Universidad" class="login-logo">
           <h2>Acceso Estudiantes</h2>
 
           <form>
@@ -56,50 +57,13 @@
     <!-- Footer -->
     <footer class="footer-unab">
       <div class="footer-content">
-        <img src="../IMG/LogoUnab.png" alt="Logo UNAB" class="footer-logo">
+        <img src="../IMG/logo-unab-vert.png" alt=""> 
         <div class="footer-text">
-          <p>Universidad Autónoma de Bucaramanga</p>
-          <p>© Todos los derechos reservados</p>
+        <p>Universidad Autónoma de Bucaramanga <br> © Todos los derechos reservados</p>
         </div>
       </div>
     </footer>
   </div>
-
-  <!-- animaciones generales -->
-  <!-- Script para la animacion de las imagenes -->
-  <script>
-
-      let slides = document.querySelectorAll('.slide');
-      let index = 0;
-
-      function showNextSlide() {
-        slides.forEach((slide) => slide.classList.remove('active'));
-        slides[index].classList.add('active');
-        index = (index + 1) % slides.length;
-      }
-
-      showNextSlide();
-      setInterval(showNextSlide, 5000);
-
-  </script>
-
-  <!-- animacion ojo -->
-  <script>
-    const togglePassword = document.getElementById('togglePassword');
-    const passwordInput = document.getElementById('password');
-
-    togglePassword.addEventListener('click', function () {
-      // Alternar tipo de input
-      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-      passwordInput.setAttribute('type', type);
-
-      // Alternar ícono de ojo
-      this.classList.toggle('fa-eye-slash');
-      this.classList.toggle('fa-eye');
-
-    });
-  </script>
-  
 
 </body>
 </html>

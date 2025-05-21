@@ -2,53 +2,139 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="https://unab.edu.co/wp-content/uploads/2022/09/cropped-favicon-naranja-32x32.png" sizes="32x32">
-  <title>Cursos Inscritos - UNAB</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/EstiloCursos.css">
+  <link rel="stylesheet" href="../CSS/Global.css">
+  <link rel="icon" href="https://unab.edu.co/wp-content/uploads/2022/09/cropped-favicon-naranja-32x32.png" sizes="32x32">
+  <script defer src="../JS/Cursos.js"></script>
+  <title>Portal de Cursos Universitarios</title>
+  <style>
+  </style>
 </head>
 <body>
+
   <header>
-    <h1>Cursos Inscritos</h1>
-    <nav>
-      <a href="main.html">Inicio</a>
-      <a href="perfil.html">Perfil</a>
-      <a href="eventos.html">Eventos</a>
-    </nav>
-  </header>
+        <div class="encabezado-container">
+            <div class="logo-section">
+                <img src="../IMG/CampanaNoti.png" alt="Campana" class="campana">
+                <img src="../IMG/FacultadMedicina.png" alt="Logo UNAB" class="logo-unab">
+            </div>
 
-  <main class="container">
-    <section class="tabla-cursos">
-      <h2>Mis Cursos</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre del Curso</th>
-            <th>Código</th>
-            <th>Profesor</th>
-            <th>Horario</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Interfaces de usuario</td>
-            <td>CS101</td>
-            <td>Juan Pérez</td>
-            <td>Lunes 8:00 AM - 10:00 AM</td>
-          </tr>
-          <tr>
-            <td>Matemáticas Computacionales</td>
-            <td>MA202</td>
-            <td>Laura Sánchez</td>
-            <td>Miércoles 10:00 AM - 12:00 PM</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-  </main>
+            <div class="Buscador">
+                <input type="text" placeholder="Buscar en el portal..." aria-label="Buscar">
+            </div>
 
-  <footer>
-    <p>© 2025 Universidad Autónoma de Bucaramanga</p>
-  </footer>
+
+            <nav class="nav-menu">
+                <button class="butonNav"><a href="Libreta.html" target="_blank">Libreta</a></button>
+                <button class="butonNav"><a href="Eventos.html" target="_blank">Eventos</a></button>
+                <button class="butonNav"><a href="Cursos.html" target="_blank">Cursos</a></button>
+                <button class="butonNav"><a href="Perfil.html" target="_blank">Perfil</a></button>
+                <button class="butonNav"><a href="MainUnab.html" target="_blank">Inicio</a></button>
+            </nav>
+        </div>
+    </header>
+
+ <div class="cursos-container">
+  <div class="lista-cursos">
+    <button class="curso" data-curso="1">Defensa y Control Metabólico</button>
+    <button class="curso" data-curso="2">Defensa y Control Metabólico Práctica</button>
+    <button class="curso" data-curso="3">Fundamentos de Bioestadística y Epidemiología</button>
+    <button class="curso" data-curso="4">Antropología Médica</button>
+    <button class="curso" data-curso="5">Médico UNAB</button>
+  </div>
+  <div class="info-curso" id="infoCurso">
+    <h2>Selecciona un curso</h2>
+    <p id="descripcion"></p>
+    <p id="profesor"></p>
+    <p id="creditos"></p>
+    <div id="horario"></div>
+  </div>
+</div>
+
+<h1 class="TituloHorario">Horario Semanal de Cursos</h1>
+
+<div class="calendar-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Hora</th>
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>08:00 - 10:00</td>
+        <td class="course" data-id="1">Defensa y Control Metabólico</td>
+        <td class="empty"></td>
+        <td class="course" data-id="1">Defensa y Control Metabólico</td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+      </tr>
+      <tr>
+        <td>10:00 - 12:00</td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="course" data-id="2">Defensa y Control Metabólico Práctica</td>
+      </tr>
+      <tr>
+        <td>14:00 - 16:00</td>
+        <td class="empty"></td>
+        <td class="course" data-id="3">Fundamentos de Bioestadística y Epidemiología</td>
+        <td class="empty"></td>
+        <td class="course" data-id="3">Fundamentos de Bioestadística y Epidemiología</td>
+        <td class="empty"></td>
+      </tr>
+      <tr>
+        <td>16:00 - 19:00</td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="course" data-id="4">Antropología Médica</td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+      </tr>
+      <tr>
+        <td>08:00 - 09:00</td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="empty"></td>
+        <td class="course" data-id="5">Médico UNAB</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-left">
+            <!-- Logo de la UNAB -->
+            <div class="footer-text">
+              <p>Universidad Autónoma De Bucaramanga <br> © Todos los derechos reservados</p>
+            </div>
+          </div>
+      
+          <div class="footer-buttons">
+            <button class="footer-btn">Encuestas <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
+             
+
+            <button class="footer-btn">Consultas <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
+            
+
+            <button class="footer-btn">Preguntas frecuentes  <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor"></button>
+            
+
+          </div>
+        </div>
+      </footer>
+
 </body>
 </html>
