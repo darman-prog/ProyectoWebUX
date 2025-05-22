@@ -8,6 +8,73 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
+/* clases cambiar modo oscuro */
+.Modo-oscuro header{
+
+  background: linear-gradient(to right, #101c44, #162450, #0a132d);
+
+  color: white;
+
+}
+.Modo-oscuro{
+  background: linear-gradient(to bottom, #0a0f29, #162050, #1b2b5c, #29408e);
+  transition: all 1.5s ease;
+}
+
+.Modo-oscuro footer{
+    background: linear-gradient(to top, #0a0f29, #101c44, #162450);
+    padding: 20px;
+    text-align: center;
+
+}
+
+.Modo-oscuro .card{
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(30, 30, 30, 0.9));
+  color: #fff; /* blanco para contrastar bien */
+}
+
+/* Ocultar el checkbox original */
+#toggle {
+    display: none;
+}
+
+/* Estilo del contenedor */
+.toggle-label {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background: linear-gradient(to right, #0f172f, #162040);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* El círculo dentro del switch */
+.toggle-label::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+/* Cambio de estado cuando se activa */
+#toggle:checked + .toggle-label {
+    background: linear-gradient(to right, #1f2e6d, #29408e);
+}
+
+#toggle:checked + .toggle-label::after {
+    left: calc(100% - 25px);
+    background: #00bfff;
+}
+
+/* clases cambiar modo oscuro */
 
 /* Barra de búsqueda */
 .Buscador {
@@ -55,10 +122,21 @@ header {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  gap: 45px;
+  gap: 50px;
   width: 100%;
   margin-left: 40px; 
 }
+
+/* Navegación + luna */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  width: 100%;
+  flex-direction: row-reverse;
+  margin-left: 20px; /* Espacio entre el botón de menú y la navegación */
+}
+
 
 .nav-menu a {
   text-decoration: none;
@@ -147,16 +225,9 @@ input[type="file"] {
     margin: 30px auto; /* Centrar el contenedor */
     padding: 20px; /* Espaciado interno */
     border-radius: 8px; /* Bordes redondeados */
+    margin-top: 60px;
 }
 
-.card {
-    background: #ffffff; /* Fondo blanco para las tarjetas */
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 15px; /* Espaciado interno */
-    margin-bottom: 20px; /* Espacio entre tarjetas */
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    font-size: 16px;
-}
 
 .card h3 {
     margin-top: 0; /* Sin margen superior */

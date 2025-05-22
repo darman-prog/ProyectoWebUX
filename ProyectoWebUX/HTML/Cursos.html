@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/EstiloCursos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="../CSS/Global.css">
   <link rel="icon" href="https://unab.edu.co/congresofacultadsalud/wp-content/uploads/sites/4/2022/09/cropped-favicon-azul-32x32.png" sizes="32x32">
   <script defer src="../JS/Cursos.js"></script>
@@ -31,85 +32,87 @@
                 <button class="butonNav"><a href="Cursos.html" target="_blank">Cursos</a></button>
                 <button class="butonNav"><a href="Perfil.html" target="_blank">Perfil</a></button>
                 <button class="butonNav"><a href="MainUnab.html" target="_blank">Inicio</a></button>
+                <label for="toggle" id="label_toggle" alt="Cambiar a modo"><i class="fa-solid fa-moon fa-2xl"></i></label>
+                <input type="checkbox" id="toggle">
             </nav>
         </div>
     </header>
 
- <div class="cursos-container">
-  <div class="lista-cursos">
-    <button class="curso" data-curso="1">Defensa y Control Metabólico</button>
-    <button class="curso" data-curso="2">Defensa y Control Metabólico Práctica</button>
-    <button class="curso" data-curso="3">Fundamentos de Bioestadística y Epidemiología</button>
-    <button class="curso" data-curso="4">Antropología Médica</button>
-    <button class="curso" data-curso="5">Médico UNAB</button>
+  <div class="cursos-container">
+    <div class="lista-cursos">
+      <button class="curso" data-curso="1">Defensa y Control Metabólico</button>
+      <button class="curso" data-curso="2">Defensa y Control Metabólico Práctica</button>
+      <button class="curso" data-curso="3">Fundamentos de Bioestadística y Epidemiología</button>
+      <button class="curso" data-curso="4">Antropología Médica</button>
+      <button class="curso" data-curso="5">Médico UNAB</button>
+    </div>
+    <div class="info-curso" id="infoCurso">
+      <h2>Selecciona un curso</h2>
+      <p id="descripcion"></p>
+      <p id="profesor"></p>
+      <p id="creditos"></p>
+      <div id="horario"></div>
+    </div>
   </div>
-  <div class="info-curso" id="infoCurso">
-    <h2>Selecciona un curso</h2>
-    <p id="descripcion"></p>
-    <p id="profesor"></p>
-    <p id="creditos"></p>
-    <div id="horario"></div>
+
+  <h1 class="TituloHorario">Horario Semanal de Cursos</h1>
+
+  <div class="calendar-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Hora</th>
+          <th>Lunes</th>
+          <th>Martes</th>
+          <th>Miércoles</th>
+          <th>Jueves</th>
+          <th>Viernes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>08:00 - 10:00</td>
+          <td class="course" data-id="1">Defensa y Control Metabólico</td>
+          <td class="empty"></td>
+          <td class="course" data-id="1">Defensa y Control Metabólico</td>
+          <td class="empty"></td>
+          <td class="empty"></td>
+        </tr>
+        <tr>
+          <td>10:00 - 12:00</td>
+          <td class="empty"></td>
+          <td class="empty"></td>
+          <td class="empty"></td>
+          <td class="empty"></td>
+          <td class="course" data-id="2">Defensa y Control Metabólico Práctica</td>
+        </tr>
+        <tr>
+          <td>14:00 - 16:00</td>
+          <td class="empty"></td>
+          <td class="course" data-id="3">Fundamentos de Bioestadística y Epidemiología</td>
+          <td class="empty"></td>
+          <td class="course" data-id="3">Fundamentos de Bioestadística y Epidemiología</td>
+          <td class="empty"></td>
+        </tr>
+        <tr>
+          <td>16:00 - 19:00</td>
+          <td class="empty"></td>
+          <td class="empty"></td>
+          <td class="course" data-id="4">Antropología Médica</td>
+          <td class="empty"></td>
+          <td class="empty"></td>
+        </tr>
+        <tr>
+          <td>08:00 - 09:00</td>
+          <td class="empty"></td>
+          <td class="empty"></td>
+          <td class="empty"></td>
+          <td class="empty"></td>
+          <td class="course" data-id="5">Médico UNAB</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</div>
-
-<h1 class="TituloHorario">Horario Semanal de Cursos</h1>
-
-<div class="calendar-container">
-  <table>
-    <thead>
-      <tr>
-        <th>Hora</th>
-        <th>Lunes</th>
-        <th>Martes</th>
-        <th>Miércoles</th>
-        <th>Jueves</th>
-        <th>Viernes</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>08:00 - 10:00</td>
-        <td class="course" data-id="1">Defensa y Control Metabólico</td>
-        <td class="empty"></td>
-        <td class="course" data-id="1">Defensa y Control Metabólico</td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-      </tr>
-      <tr>
-        <td>10:00 - 12:00</td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-        <td class="course" data-id="2">Defensa y Control Metabólico Práctica</td>
-      </tr>
-      <tr>
-        <td>14:00 - 16:00</td>
-        <td class="empty"></td>
-        <td class="course" data-id="3">Fundamentos de Bioestadística y Epidemiología</td>
-        <td class="empty"></td>
-        <td class="course" data-id="3">Fundamentos de Bioestadística y Epidemiología</td>
-        <td class="empty"></td>
-      </tr>
-      <tr>
-        <td>16:00 - 19:00</td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-        <td class="course" data-id="4">Antropología Médica</td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-      </tr>
-      <tr>
-        <td>08:00 - 09:00</td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-        <td class="empty"></td>
-        <td class="course" data-id="5">Médico UNAB</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
 
 
   

@@ -4,18 +4,212 @@
     box-sizing: border-box;
 }
 
-
 html {
   height: 100%;
   animation: gradient 15s ease infinite;
 }
 
 body {
-    color: #2c3e50;
-    line-height: 1.6;
-    background: linear-gradient(-45deg, #5262ee, #2ec9d4, #5897ad, #23d5ab);
-    background-size: 400% 400%;
+  color: #2c3e50;
+  line-height: 1.4;
+  background: linear-gradient(-45deg, #5262ee, #2ec9d4, #5897ad, #23d5ab);
+  background-size: 400% 400%;
 }
+
+/* clases cambiar modo oscuro */
+.Modo-oscuro header{
+
+  background: linear-gradient(to right, #101c44, #162450, #0a132d);
+  color: white;
+
+}
+.Modo-oscuro{
+  background: linear-gradient(to bottom, #0a0f29, #162050, #1b2b5c, #29408e);
+  transition: all 1.5s ease;
+  background-size: 400% 400%;
+
+}
+
+.Modo-oscuro footer{
+    background: linear-gradient(to top, #0a0f29, #101c44, #162450);
+    padding: 20px;
+    text-align: center;
+
+}
+
+
+.Modo-oscuro .evento-cabecera{
+  background: #004080;
+
+}
+
+.Modo-oscuro .contenedor {
+  background: #1a1d29;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.Modo-oscuro .cabecera {
+  background: linear-gradient(135deg, #0a0d31 0%, #225591 100%);
+}
+
+.Modo-oscuro .cabecera h1 {
+  color: #f7fafc;
+}
+
+.Modo-oscuro .info-estudiante {
+  background: #252a3a;
+  border-color: #3a4154;
+  color: #b8c5d1;
+}
+
+.Modo-oscuro .info-estudiante strong {
+  color: #e2e8f0;
+}
+
+.Modo-oscuro .info-estudiante span {
+  color: #b8c5d1;
+}
+
+.Modo-oscuro .progreso-contenedor {
+  background: #18254d;
+  border-color: #3a4154;
+}
+
+.Modo-oscuro .progreso-contenedor h2 {
+  color: #e2e8f0;
+}
+
+.Modo-oscuro .progreso-barra-contenedor {
+  background: #1a1d29;
+  border-color: #4a5568;
+}
+
+.Modo-oscuro .progreso-barra {
+  background: linear-gradient(135deg, #4a90e2 0%, #2b6cb0 100%);
+  color: #f7fafc;
+}
+
+.Modo-oscuro #resumenHoras {
+  color: #b8c5d1;
+}
+
+.Modo-oscuro #resumenHoras strong {
+  color: #e2e8f0;
+}
+
+.Modo-oscuro .lista-eventos {
+  background: #252a3a;
+  border-color: #3a4154;
+}
+
+.Modo-oscuro .lista-eventos h3 {
+  color: #e2e8f0;
+}
+
+.Modo-oscuro .lista-eventos p {
+  color: #9ca3af;
+
+}
+
+.Modo-oscuro .evento-item {
+  background: #2d3748;
+  border-color: #4a5568;
+  color: #b8c5d1;
+}
+
+.Modo-oscuro .evento-item:hover {
+  background: #374151;
+  box-shadow: 0 2px 10px rgba(74, 144, 226, 0.2);
+}
+
+.Modo-oscuro .evento-titulo {
+  color: #e2e8f0;
+}
+
+.Modo-oscuro .evento-fecha {
+  color: #9ca3af;
+}
+
+.Modo-oscuro .evento-horas {
+  background-color: #2d3250;
+  color: #f1f6f9;
+  border-left: 5px solid #383d75;
+  padding: 5px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+.Modo-oscuro .resumen-total {
+  background: #252a3a;
+  color: #b8c5d1;
+}
+
+.Modo-oscuro .resumen-total strong {
+  color: #e2e8f0;
+}
+
+.Modo-oscuro .badge-pendiente {
+  background: linear-gradient(135deg, #ed8936 0%, #c53030 100%);
+  color: #f7fafc;
+}
+
+.Modo-oscuro .badge-completado {
+  background: linear-gradient(135deg, #48bb78 0%, #2f855a 100%);
+  color: #f7fafc;
+}
+
+.Modo-oscuro .badge-progreso {
+  background: linear-gradient(135deg, #4a90e2 0%, #2b6cb0 100%);
+  color: #f7fafc;
+}
+
+/* Ocultar el checkbox original */
+#toggle {
+    display: none;
+}
+
+/* Estilo del contenedor */
+.toggle-label {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background: linear-gradient(to right, #0f172f, #162040);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+/* El círculo dentro del switch */
+.toggle-label::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+/* Cambio de estado cuando se activa */
+#toggle:checked + .toggle-label {
+    background: linear-gradient(to right, #1f2e6d, #29408e);
+}
+
+#toggle:checked + .toggle-label::after {
+    left: calc(100% - 25px);
+    background: #00bfff;
+}
+
+/* clases cambiar modo oscuro */
+
+
 /* header */
 header {
   position: sticky;
@@ -76,6 +270,17 @@ header {
   gap: 45px;
   width: 100%;
   margin-left: 40px; 
+}
+
+
+/* Navegación + luna */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  flex-direction: row-reverse;
+  margin-left: 20px; /* Espacio entre el botón de menú y la navegación */
 }
 
 .nav-menu a {
