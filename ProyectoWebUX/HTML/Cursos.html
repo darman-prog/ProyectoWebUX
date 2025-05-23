@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="contenedorMain">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -141,6 +141,14 @@
             </div>
         </div>
     </footer>
+    <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const contenedor = document.getElementById("contenedorMain");
+            setTimeout(() => {
+                contenedor.style.left = "0";
+            }, 80); 
+        });
+    </script>
 
 </body>
 </html>

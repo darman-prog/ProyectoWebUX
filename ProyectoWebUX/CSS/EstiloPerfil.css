@@ -346,6 +346,22 @@ html, body {
   overflow-x: hidden;
 }
 
+body {
+  animation: fadeOut 0.5s ease forwards;
+  animation: fadeIn 0.7s ease forwards;
+
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
 /* Fondo animado */
 html {
   height: 100%;
