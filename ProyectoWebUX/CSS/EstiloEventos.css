@@ -1,135 +1,604 @@
-      * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .contenedor-carrusel {
-            position: relative;
-            max-width: 800px;
-            width: 100%;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        
-        .carrusel {
-            position: relative;
-            height: 400px;
-            overflow: hidden;
-        }
-        
-        .carrusel-interior {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            cursor: pointer;
-        }
-        
-        .carrusel-imagen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        
-        .carrusel-imagen.activa {
-            opacity: 1;
-        }
-        
-        .carrusel-navegacion {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            transform: translateY(-50%);
-            display: flex;
-            justify-content: space-between;
-            padding: 0 20px;
-            z-index: 10;
-        }
-        
-        .carrusel-boton {
-            background-color: rgba(255, 255, 255, 0.7);
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .carrusel-boton:hover {
-            background-color: rgba(255, 255, 255, 0.9);
-            transform: scale(1.1);
-        }
-        
-        .carrusel-boton svg {
-            width: 20px;
-            height: 20px;
-            fill: #333;
-        }
-        
-        .carrusel-descripcion {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 15px;
-            transform: translateY(100%);
-            transition: transform 0.3s ease-in-out;
-        }
-        
-        .mostrar-descripcion .carrusel-descripcion {
-            transform: translateY(0);
-        }
-        
-        .carrusel-titulo {
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-        
-        .carrusel-texto {
-            font-size: 14px;
-            line-height: 1.4;
-        }
-        
-        .carrusel-indicadores {
-            display: flex;
-            justify-content: center;
-            padding: 15px 0;
-        }
-        
-        .indicador {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: #ddd;
-            margin: 0 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        .indicador.activo {
-            background-color: #666;
-        }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: linear-gradient(-45deg, #5262ee, #2ec9d4, #5897ad, #23d5ab);
+
+}
+
+h1 {
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    margin: 2rem auto;
+    padding: 1.2rem 2rem;
+    font-weight: 500;
+    font-size: clamp(2rem, 4vw, 3.2rem); /* Tamaño responsivo más equilibrado */
+    max-width: 100%;
+    border-radius: 0.75rem;
+    background: linear-gradient(145deg, #ff9900, #fd9e0f); /* Fondo con degradado sutil */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más natural */
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    letter-spacing: 0.5px;
+    margin-top: -5rem;
+}
+
+  /* Efecto hover opcional para interacción */
+h1:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* clases cambiar modo oscuro */
+.Modo-oscuro header{
+
+    background: linear-gradient(to right, #101c44, #162450, #0a132d);
+    color: white;
+
+}
+.Modo-oscuro{
+    background: linear-gradient(to bottom, #0a0f29, #162050, #1b2b5c, #29408e);
+    transition: all 1.5s ease;
+}
+
+.Modo-oscuro .curso {
+    background: #1a2341;
+    border-color: #3a4154;
+    color: #b8c5d1;
+}
+
+.Modo-oscuro .lista-cursos{
+
+    background: #003366;
+    box-shadow: 0px 2px 10px #00bfff;
+
+}
+
+.Modo-oscuro .curso:hover {
+    background: #143e52;
+    border-color: #4a90e2;
+    color: #e2e8f0;
+}
+
+.Modo-oscuro .curso.active {
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: white;
+    border-color: #357abd;
+}
+
+.Modo-oscuro .info-curso {
+    background: #041d31;
+    box-shadow: 0px 2px 10px rgb(33, 145, 107);
+    border-color: #3a4154;
+}
+
+
+.Modo-oscuro .info-curso h2 {
+    color: #e2e8f0;
+}
+
+.Modo-oscuro .info-curso p {
+    color: #b8c5d1;
+}
+
+.Modo-oscuro .TituloHorario {
+    background: linear-gradient(to right, #101c44, #162450, #0a132d);
+    color: #d1d8e2;
+}
+
+
+.Modo-oscuro table {
+    background: #252a3a;
+}
+
+.Modo-oscuro thead tr {
+    background: linear-gradient(135deg, #2d3748 0%, #4a90e2 100%);
+}
+
+.Modo-oscuro th {
+    color: #f7fafc;
+}
+
+.Modo-oscuro td {
+    border-bottom-color: #3a4154;
+    color: #b8c5d1;
+}
+
+.Modo-oscuro td:first-child {
+    background: #2d3748;
+    color: #e2e8f0;
+    border-right-color: #4a5568;
+}
+
+.Modo-oscuro .course {
+    background: linear-gradient(135deg, #4a90e2 0%, #2b6cb0 100%);
+    color: #f7fafc;
+}
+
+.Modo-oscuro .course:hover {
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+}
+
+.Modo-oscuro .empty {
+    background: #6d81a3;
+    color: #718096;
+}
+
+
+.Modo-oscuro footer{
+    background: linear-gradient(to top, #0a0f29, #101c44, #162450);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Ocultar el checkbox original */
+#toggle {
+    display: none;
+}
+
+/* Estilo del contenedor */
+.toggle-label {
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    background: linear-gradient(to right, #0f172f, #162040);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* El círculo dentro del switch */
+.toggle-label::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    transition: 0.3s;
+}
+
+/* Cambio de estado cuando se activa */
+#toggle:checked + .toggle-label {
+    background: linear-gradient(to right, #1f2e6d, #29408e);
+}
+
+#toggle:checked + .toggle-label::after {
+    left: calc(100% - 25px);
+    background: #00bfff;
+    }
+    
+/* clases cambiar modo oscuro */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e2f1f7;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+
+    /* Barra de búsqueda */
+.Buscador {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin-right: 10px;
+    box-shadow: 0 2px 6px rgb(16, 190, 202);
+    }
+
+.Buscador input {
+    border: none;
+    outline: none;
+    padding: 6px;
+    width: 200px;
+}
+
+.encabezado-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+    /* Logo + campana */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 35px; /* Espacio entre la campana y el logo */
+}
+
+.logo-section img:first-child {
+    height: 35px; /* campana más pequeña */
+}
+
+.logo-unab {
+    height: 40px;
+}
+
+    /* Navegación + luna */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    flex-direction: row-reverse;
+    margin-left: 20px; /* Espacio entre el botón de menú y la navegación */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #171111;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+
+.butonNav {
+    background-color: #5CCCF6;
+    padding: 6px 12px;
+    width: 80px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.3s; /* Añadido para la transición de fondo */
+    }
+    
+    
+    
+    .butonNav:hover {
+    background-color: #F58220;
+    color: white;
+    transform: scale(1.05);
+    transition: transform 0.3s;
+    }
+    
+    .butonNav:hover a {
+    color: white; /* Cambia el color del texto al hacer hover sobre el botón */
+    }
+    
+    /* clases cambiar modo oscuro */
+    .Modo-oscuro header{
+    
+    background: linear-gradient(to right, #101c44, #162450, #0a132d);
+    color: white;
+    
+    }
+    .Modo-oscuro{
+    background: linear-gradient(to bottom, #0a0f29, #162050, #1b2b5c, #29408e);
+    transition: all 1.5s ease;
+    }
+    
+    .Modo-oscuro footer{
+        background: linear-gradient(to top, #0a0f29, #101c44, #162450);
+        padding: 20px;
+        text-align: center;
+    
+    }
+    
+    
+    .Modo-oscuro .main-content{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #0d0b22;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+    }
+    
+    /* Ocultar el checkbox original */
+    #toggle {
+        display: none;
+    }
+    
+    /* Estilo del contenedor */
+    .toggle-label {
+        display: inline-block;
+        width: 50px;
+        height: 25px;
+        background: linear-gradient(to right, #0f172f, #162040);
+        border-radius: 50px;
+        position: relative;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    
+    
+    /* El círculo dentro del switch */
+    .toggle-label::after {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 50%;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        transition: 0.3s;
+    }
+    
+    /* Cambio de estado cuando se activa */
+#toggle:checked + .toggle-label {
+    background: linear-gradient(to right, #1f2e6d, #29408e);
+}
+
+#toggle:checked + .toggle-label::after {
+    left: calc(100% - 25px);
+    background: #00bfff;
+}
+
+    /* clases cambiar modo oscuro */
+
+
+.contenedor-carrusel {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.carrusel {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.carrusel-interior {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.carrusel-imagen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carrusel-imagen.activa {
+    opacity: 1;
+}
+
+.carrusel-navegacion {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 10;
+}
+
+.carrusel-boton {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.carrusel-boton:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+}
+
+.carrusel-boton svg {
+    width: 20px;
+    height: 20px;
+    fill: #333;
+}
+
+.carrusel-descripcion {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mostrar-descripcion .carrusel-descripcion {
+    transform: translateY(0);
+}
+
+.carrusel-titulo {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.carrusel-texto {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.carrusel-indicadores {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+}
+
+.indicador {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.indicador.activo {
+    background-color: #666;
+}
+/* footer */
+/* Footer general */
+.footer {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #222;
+    padding: 12px 20px;
+    width: 100%;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+  }
+  
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap; 
+    gap: 26px;
+  }
+  
+  .footer-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    min-width: 240px;
+  }
+  
+  .logo-footer {
+    height: 40px;
+    margin-left: 25px;
+    transform: scaleX(20px) scaleY(20px); 
+  }
+  
+  .footer-text p {
+    margin: 0 0 0 20px;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 5px 7px rgba(202, 143, 16, 0.4);
+    max-width: 250px;
+    border-radius: 8px;
+    padding: 6px 10px;
+    background-color: #ffffff;
+  }
+  
+  
+  /* Parte derecha del footer: botones */
+  .footer-buttons {
+    display: flex;
+    margin-top: -15px;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex: 1;
+    min-width: 260px;
+  }
+  
+  .footer-btn {
+    background-color: #ffffff;
+    color: #222;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 6px rgba(16, 190, 202, 0.6);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .footer-btn:hover {
+    background-color: #F58220;
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+      background: none;
+      font-size: 1.8rem;
+      border: none;
+      color: white;
+      cursor: pointer;
+    }
+  
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      background-color: #004080;
+      width: 100%;
+      padding: 1rem 0;
+    }
+  
+    .nav-menu.active {
+      display: flex;
+    }
+  
+    .butonNav {
+      background-color: transparent;
+      border: none;
+      padding: 0.5rem 1rem;
+      text-align: left;
+    }
+  
+    .butonNav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      display: block;
+    }
+  
+  }

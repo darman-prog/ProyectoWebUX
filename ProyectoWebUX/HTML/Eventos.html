@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/Global.css">
-  <link rel="stylesheet" href="../CSS/EstiloEventos.css">
-  <link rel="icon" href="https://unab.edu.co/congresofacultadsalud/wp-content/uploads/sites/4/2022/09/cropped-favicon-azul-32x32.png" sizes="32x32">
-  <script defer src="../JS/Libreta.js"></script>
-  <title>Eventos UNAB</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/Global.css">
+    <link rel="stylesheet" href="../CSS/EstiloEventos.css">
+    <link rel="icon" href="https://unab.edu.co/congresofacultadsalud/wp-content/uploads/sites/4/2022/09/cropped-favicon-azul-32x32.png" sizes="32x32">
+    <script defer src="../JS/Libreta.js"></script>
+    <title>Eventos UNAB</title>
 </head>
-  <style>
-  
-    </style>
-</head>
+
+
 <body>
+    <header >
+        <div class="encabezado-container">
+            <div class="logo-section">
+                <img src="../IMG/CampanaNoti.png" alt="Campana" class="campana">
+                <img src="../IMG/FacultadMedicina.png" alt="Logo UNAB" class="logo-unab">
+            </div>
+            <div class="Buscador">
+                <input type="text" placeholder="Buscar en el portal..." aria-label="Buscar">
+            </div>
+            <nav class="nav-menu">
+                <button class="butonNav"><a href="Libreta.html" target="_blank">Libreta</a></button>
+                <button class="butonNav"><a href="Eventos.html" target="_blank">Eventos</a></button>
+                <button class="butonNav"><a href="Cursos.html" target="_blank">Cursos</a></button>
+                <button class="butonNav"><a href="Perfil.html" target="_blank">Perfil</a></button>
+                <button class="butonNav"><a href="MainUnab.html" target="_blank">Inicio</a></button>
+                <label for="toggle" id="label_toggle" alt="Cambiar a modo"><i class="fa-solid fa-moon fa-2xl"></i></label>
+                <input type="checkbox" id="toggle">
+            </nav>
+        </div>
+    </header>
+    <br>
+    <div class="ContenedorTitulo">
+        <h1 class="TituloHorario">Eventos Agendados 2025</h1>
+    </div>
     <div class="contenedor-carrusel">
         <div class="carrusel">
             <div class="carrusel-interior" id="carruselInterior">
@@ -21,9 +43,9 @@
                 <img src="https://unab.edu.co/wp-content/uploads/2023/04/breves-unab-fest-1024x575.jpg" alt="Evento 1" class="carrusel-imagen activa" data-indice="0">
                 <img src="https://ulibro.com/wp-content/uploads/2025/02/poster-ulibro-2025.jpg" alt="Evento 2" class="carrusel-imagen" data-indice="1">
                 <img src="https://scontent.fbga1-3.fna.fbcdn.net/v/t39.30808-6/486463739_1093900239448287_6139042032073442255_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=jd_MBelbTPEQ7kNvwF-fVd5&_nc_oc=AdkcsISWs4He693CFgFS_qqkMuwR3OlnMS9_9ZcUs9CxCF7JK0IJ1iooe6_uKwaZhhM&_nc_zt=23&_nc_ht=scontent.fbga1-3.fna&_nc_gid=peqUgH6m6kHErc3pFF-HiQ&oh=00_AfIz89UtFUmlJVlZou9iqSkEIXNcylqgayJvznjvIWnKLA&oe=6832EF12" alt="Evento 3" class="carrusel-imagen" data-indice="2">
-                <img src="https://instagram.fbga1-3.fna.fbcdn.net/v/t51.2885-15/496969423_17967394160902473_1600865242032078701_n.jpg?stp=dst-jpg_e35_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6IkNBUk9VU0VMX0lURU0uaW1hZ2VfdXJsZ2VuLjEwNzF4MTMzOC5zZHIuZjc1NzYxLmRlZmF1bHRfaW1hZ2UifQ&_nc_ht=instagram.fbga1-3.fna.fbcdn.net&_nc_cat=109&_nc_oc=Q6cZ2QHPGbUI0a2lVn34yxNla00d3jQZI4Et4R9kfaUg2MsZys_7I5-PSKlGEPkKI0vS6Pw&_nc_ohc=Ptf4tEehKZYQ7kNvwELuSCt&_nc_gid=bzQsTfwFQuEEiR3N-XHESw&edm=APs17CUBAAAA&ccb=7-5&ig_cache_key=MzYzMTA0NjE5MTQ4NzUzMTczMw%3D%3D.3-ccb7-5&oh=00_AfIehAfMgOTCquVfn0jFh-hHmzf_B0a7rd7Sxw5eE9FXCg&oe=6832DDF3&_nc_sid=10d13b" alt="Evento 4" class="carrusel-imagen" data-indice="3">
+                <img src="https://unab.edu.co/wp-content/uploads/2025/05/POST-1_CONGRESO-SALUD-1-819x1024.png" alt="Evento 4" class="carrusel-imagen" data-indice="3">
                 
-                <!-- Descripciones -->
+                <!-- Descripciones  -->
                 <div class="carrusel-descripcion">
                     <h3 class="carrusel-titulo">Título del Evento 1</h3>
                     <p class="carrusel-texto">Descripción detallada del primer evento. Aquí puedes añadir toda la información relevante sobre este evento en particular.</p>
@@ -48,7 +70,33 @@
         <!-- Indicadores -->
         <div class="carrusel-indicadores" id="indicadores"></div>
     </div>
-    
+    <br>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <div class="footer-text">
+                    <p>Universidad Autónoma De Bucaramanga <br> © Todos los derechos reservados</p>
+                </div>
+            </div>
+            <div class="footer-buttons">
+                    <a href="https://pasaporte.unab.edu.co/" class="footer-btn">
+                    Encuestas
+                    <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor">
+                    </a>
+                    
+                    <a href="https://unab.edu.co/contactanos/" class="footer-btn">
+                    Consultas 
+                    <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor">
+                    </a>
+
+                    <a href="https://clic.kayako.com/" class="footer-btn">
+                    Preguntas frecuentes
+                    <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor">
+                    </a>
+            </div>
+        </div>
+    </footer>
+
     <script>
         // Datos de los eventos - Puedes expandir esta lista fácilmente
         const datosEventos = [
