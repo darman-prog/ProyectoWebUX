@@ -193,3 +193,5 @@ toggle.addEventListener('change',(event)=>{
         label_toggle.innerHTML='<i class="fa-solid fa-moon fa-2xl"></i>'
     }
 })
+
+console.log("Universo alterno")

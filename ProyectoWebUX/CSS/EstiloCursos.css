@@ -10,6 +10,8 @@ html {
   height: 100%;
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
+  animation: bounceIn 1s ease-out;
+
 }
 
 @keyframes gradient {
@@ -18,11 +20,24 @@ html {
   100% { background-position: 0% 50%; }
 }
 
-#contenedorMain {
-    position: relative;
-    left: -100%;
-    transition: left 1.5s ease-in-out;
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
+
+ 
 
 /* clases cambiar modo oscuro */
 .Modo-oscuro header{
