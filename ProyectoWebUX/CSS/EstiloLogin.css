@@ -64,7 +64,7 @@
 /* Panel derecho con login */
 .right-panel {
   flex: 1;
-  background-color: #00aff1  ;
+  background-color: #00b1f1ae  ;
   
   display: flex;
   justify-content: center;
@@ -184,7 +184,7 @@ input:focus {
 
 /* Footer */
 .footer-unab {
-  background-color: #8399b8;
+  background-color: #77a5e4;
   color: #130909;
   max-height: 100px;
   padding: 20px 0;
