@@ -18,16 +18,16 @@
       <!-- Carrusel -->
       <div class="left-panel">
         <div class="slideshow">
-          <div class="slide" style="background-image: url('../IMG/EdificioUnab.jpg');"></div>
-          <div class="slide" style="background-image: url('../IMG/ElbosqueUnab.jpg');"></div>
-          <div class="slide" style="background-image: url('../IMG/LacasonaUnab.jpg');"></div>
+          <div class="slide" role="img" aria-label="Edificio principal de la UNAB" style="background-image: url('../IMG/EdificioUnab.jpg');"></div>
+          <div class="slide" role="img" aria-label="Bosque del campus UNAB" style="background-image: url('../IMG/ElbosqueUnab.jpg');"></div>
+          <div class="slide" role="img" aria-label="Casona de la UNAB" style="background-image: url('../IMG/LacasonaUnab.jpg');"></div>
         </div>
       </div>
 
       <!-- Login -->
       <div class="right-panel">
         <div class="login-container">
-          <img src="/ProyectoWebUX/IMG/MedicinaUnab.png" alt="Logo Universidad" class="login-logo">
+          <img src="../IMG/MedicinaUnab.png" alt="Logo Universidad" class="login-logo">
           <h2>Acceso Estudiantes</h2>
 
           <form>
@@ -42,11 +42,11 @@
               <label for="password">Contraseña</label>
               <div class="input-icon">
                 <input type="password" id="password" name="password" placeholder="••••••••" required>
-                <i class="fas fa-eye-slash toggle-password" id="togglePassword"></i>
+                <button type="button" class="toggle-password" id="togglePassword" aria-label="Mostrar contraseña"><i class="fas fa-eye-slash" aria-hidden="true"></i></button>
               </div>
             </div>
           
-            <button type="submit" class="login-btn"><a class="IngresarLink" href="MainUnab.html">Ingresar</a></button>
+            <a class="login-btn" href="MainUnab.html">Ingresar</a>
           </form>
           
           
@@ -55,14 +55,8 @@
     </div>
 
     <!-- Footer -->
-    <footer class="footer-unab">
-      <div class="footer-content">
-        <img src="../IMG/logo-unab-vert.png" alt=""> 
-        <div class="footer-text">
-        <p>Universidad Autónoma de Bucaramanga <br> © Todos los derechos reservados</p>
-        </div>
-      </div>
-    </footer>
+    <div
+    data-portal-footer></div>
   </div>
 
 

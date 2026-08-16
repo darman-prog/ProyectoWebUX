@@ -48,6 +48,13 @@ botones.forEach(boton => {
     const id = boton.dataset.curso;
     const curso = cursos[id];
 
+    botones.forEach(b => {
+      b.classList.remove("activo");
+      b.setAttribute("aria-pressed", "false");
+    });
+    boton.classList.add("activo");
+    boton.setAttribute("aria-pressed", "true");
+
     document.querySelector("#infoCurso h2").textContent = curso.nombre;
     descripcion.textContent = `Descripción: ${curso.descripcion}`;
     profesor.textContent = `Profesor: ${curso.profesor}`;
@@ -55,14 +62,3 @@ botones.forEach(boton => {
     horario.innerHTML = `<strong>Horario:</strong><ul>${curso.horario.map(dia => `<li>${dia}</li>`).join("")}</ul>`;
   });
 });
-
-let toggle=document.getElementById('toggle');
-toggle.addEventListener('change',(event)=>{
-    let checked=event.target.checked;
-    document.body.classList.toggle('Modo-oscuro');
-    if (checked == true){
-        label_toggle.innerHTML='<i class="fa-solid fa-sun fa-2xl" style="color: #FFD43B;"></i>'
-    }else{
-        label_toggle.innerHTML='<i class="fa-solid fa-moon fa-2xl"></i>'
-    }
-})

@@ -5,135 +5,134 @@
 }
 
 html {
-  height: 100%;
+  min-height: 100%;
   animation: gradient 15s ease infinite;
 }
 
 body {
-  color: #2c3e50;
+  padding-top: 70px;
+  color: var(--azul-grafito);
   line-height: 1.4;
-  background: linear-gradient(-45deg, #5262ee, #2ec9d4, #5897ad, #23d5ab);
+  background: var(--gradiente-fondo);
   background-size: 400% 400%;
 }
 
 /* clases cambiar modo oscuro */
 .Modo-oscuro header{
 
-  background: linear-gradient(to right, #101c44, #162450, #0a132d);
+  background: var(--oscuro-header);
   color: white;
 
 }
 .Modo-oscuro{
-  background: linear-gradient(to bottom, #0a0f29, #162050, #1b2b5c, #29408e);
+  background: var(--oscuro-fondo-gradiente);
   transition: all 1.5s ease;
   background-size: 400% 400%;
 
 }
 
 .Modo-oscuro footer{
-    background: linear-gradient(to top, #0a0f29, #101c44, #162450);
-    padding: 20px;
-    text-align: center;
+    background: var(--oscuro-footer);
 
 }
 
 
 .Modo-oscuro .evento-cabecera{
-  background: #004080;
+  background: var(--unab-azul-nav);
 
 }
 
 .Modo-oscuro .contenedor {
-  background: #1a1d29;
+  background: var(--oscuro-superficie);
   box-shadow: 0 4px 20px rgba(0,0,0,0.4);
 }
 
 .Modo-oscuro .cabecera {
-  background: linear-gradient(135deg, #0a0d31 0%, #225591 100%);
+  background: var(--oscuro-fondo-gradiente);
 }
 
 .Modo-oscuro .cabecera h1 {
-  color: #f7fafc;
+  color: var(--oscuro-texto-brillante);
 }
 
 .Modo-oscuro .info-estudiante {
-  background: #252a3a;
-  border-color: #3a4154;
-  color: #b8c5d1;
+  background: var(--oscuro-superficie-2);
+  border-color: var(--oscuro-borde);
+  color: var(--oscuro-texto-cuerpo);
 }
 
 .Modo-oscuro .info-estudiante strong {
-  color: #e2e8f0;
+  color: var(--oscuro-texto);
 }
 
 .Modo-oscuro .info-estudiante span {
-  color: #b8c5d1;
+  color: var(--oscuro-texto-cuerpo);
 }
 
 .Modo-oscuro .progreso-contenedor {
-  background: #18254d;
-  border-color: #3a4154;
+  background: var(--oscuro-superficie);
+  border-color: var(--oscuro-borde);
 }
 
 .Modo-oscuro .progreso-contenedor h2 {
-  color: #e2e8f0;
+  color: var(--oscuro-texto);
 }
 
 .Modo-oscuro .progreso-barra-contenedor {
-  background: #1a1d29;
-  border-color: #4a5568;
+  background: var(--oscuro-superficie);
+  border-color: var(--oscuro-borde-suave);
 }
 
 .Modo-oscuro .progreso-barra {
-  background: linear-gradient(135deg, #4a90e2 0%, #2b6cb0 100%);
-  color: #f7fafc;
+  background: linear-gradient(135deg, var(--oscuro-acento) 0%, var(--oscuro-acento-oscuro) 100%);
+  color: var(--oscuro-texto-brillante);
 }
 
 .Modo-oscuro #resumenHoras {
-  color: #b8c5d1;
+  color: var(--oscuro-texto-cuerpo);
 }
 
 .Modo-oscuro #resumenHoras strong {
-  color: #e2e8f0;
+  color: var(--oscuro-texto);
 }
 
 .Modo-oscuro .lista-eventos {
-  background: #252a3a;
-  border-color: #3a4154;
+  background: var(--oscuro-superficie-2);
+  border-color: var(--oscuro-borde);
 }
 
 .Modo-oscuro .lista-eventos h3 {
-  color: #e2e8f0;
+  color: var(--oscuro-texto);
 }
 
 .Modo-oscuro .lista-eventos p {
-  color: #9ca3af;
+  color: var(--oscuro-texto-cuerpo);
 
 }
 
 .Modo-oscuro .evento-item {
-  background: #2d3748;
-  border-color: #4a5568;
-  color: #b8c5d1;
+  background: var(--oscuro-superficie-3);
+  border-color: var(--oscuro-borde-suave);
+  color: var(--oscuro-texto-cuerpo);
 }
 
 .Modo-oscuro .evento-item:hover {
-  background: #374151;
+  background: var(--oscuro-superficie-hover);
   box-shadow: 0 2px 10px rgba(74, 144, 226, 0.2);
 }
 
 .Modo-oscuro .evento-titulo {
-  color: #e2e8f0;
+  color: var(--oscuro-texto);
 }
 
 .Modo-oscuro .evento-fecha {
-  color: #9ca3af;
+  color: var(--oscuro-texto-cuerpo);
 }
 
 .Modo-oscuro .evento-horas {
-  background-color: #2d3250;
-  color: #f1f6f9;
-  border-left: 5px solid #383d75;
+  background-color: var(--oscuro-superficie-3);
+  color: var(--oscuro-texto-brillante);
+  border-left: 5px solid var(--oscuro-borde);
   padding: 5px;
   border-radius: 6px;
   margin-bottom: 10px;
@@ -142,81 +141,63 @@ body {
 
 
 .Modo-oscuro .resumen-total {
-  background: #252a3a;
-  color: #b8c5d1;
+  background: var(--oscuro-superficie-2);
+  color: var(--oscuro-texto-cuerpo);
 }
 
 .Modo-oscuro .resumen-total strong {
-  color: #e2e8f0;
+  color: var(--oscuro-texto);
 }
 
 .Modo-oscuro .badge-pendiente {
   background: linear-gradient(135deg, #ed8936 0%, #c53030 100%);
-  color: #f7fafc;
+  color: var(--oscuro-texto-brillante);
 }
 
-.Modo-oscuro .badge-completado {
+.Modo-oscuro .badge-completo {
   background: linear-gradient(135deg, #48bb78 0%, #2f855a 100%);
-  color: #f7fafc;
+  color: var(--oscuro-texto-brillante);
 }
 
-.Modo-oscuro .badge-progreso {
-  background: linear-gradient(135deg, #4a90e2 0%, #2b6cb0 100%);
-  color: #f7fafc;
-}
-
-/* Ocultar el checkbox original */
+/* Ocultar el checkbox original (se mantiene accesible por teclado) */
 #toggle {
-    display: none;
-}
-
-/* Estilo del contenedor */
-.toggle-label {
-    display: inline-block;
-    width: 50px;
-    height: 25px;
-    background: linear-gradient(to right, #0f172f, #162040);
-    border-radius: 50px;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-
-/* El círculo dentro del switch */
-.toggle-label::after {
-    content: "";
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    transition: 0.3s;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
 }
 
-/* Cambio de estado cuando se activa */
-#toggle:checked + .toggle-label {
-    background: linear-gradient(to right, #1f2e6d, #29408e);
+#toggle:focus-visible + #label_toggle {
+    outline: 3px solid var(--unab-azul);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
-#toggle:checked + .toggle-label::after {
-    left: calc(100% - 25px);
-    background: #00bfff;
+#label_toggle {
+    color: var(--texto-primario);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+.Modo-oscuro #label_toggle {
+    color: var(--oscuro-texto-brillante);
 }
 
 /* clases cambiar modo oscuro */
 
-
 /* header */
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #fbfeff;
+  background-color: var(--fondo-header-alt);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -229,7 +210,7 @@ header {
     border-radius: 5px;
     padding: 2px 10px;
     margin-right: 10px;
-    box-shadow: 0 2px 6px rgb(16, 190, 202);
+    box-shadow: var(--sombra-buscador);
   }
 
 .Buscador input {
@@ -237,6 +218,11 @@ header {
     outline: none;
     padding: 6px;
     width: 200px;
+}
+
+.Buscador input:focus-visible {
+    outline: 2px solid var(--unab-azul);
+    outline-offset: 2px;
 }
 
 .encabezado-container {
@@ -252,7 +238,7 @@ header {
 .logo-section {
   display: flex;
   align-items: center;
-  gap: 40px; 
+  gap: 35px;
 }
 
 .logo-section img:first-child {
@@ -262,16 +248,6 @@ header {
 .logo-unab {
   height: 40px;
 }
-
-.nav-menu {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  gap: 45px;
-  width: 100%;
-  margin-left: 40px; 
-}
-
 
 /* Navegación + luna */
 .nav-menu {
@@ -285,27 +261,25 @@ header {
 
 .nav-menu a {
   text-decoration: none;
-  color: #423333;
+  color: var(--texto-primario);
   font-size: 15px;
   transition: color 0.3s;
 }
 
 
 .butonNav {
-  background-color: #5CCCF6;
-  padding: 4px 12px;
-  margin-top: 3px;
-  width: 100px;
+  background-color: var(--unab-azul-claro);
+  padding: 6px 12px;
+  width: 80px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.3s, transform 0.3s; /* Añadido para la transición de fondo */
-  
 }
 
 .butonNav:hover {
-  background-color: #F58220;
+  background-color: var(--unab-naranja);
   color: white;
   transform: scale(1.05);
   transition: transform 0.3s;
@@ -319,7 +293,7 @@ header {
 .contenedor {
     max-width: 1100px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: var(--fondo-blanco);
     border-radius: 9px;
     box-shadow:  0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -333,8 +307,8 @@ header {
 }
 
 .cabecera {
-    background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, var(--azul-grafito) 0%, var(--unab-azul) 100%);
+    color: var(--oscuro-texto-brillante);
     padding: 25px 20px;
     text-align: center;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
@@ -347,20 +321,20 @@ header {
 .info-estudiante {
     display: flex;
     justify-content: space-between;
-    background-color: #3498db;
+    background-color: var(--unab-azul);
     color: white;
     padding: 15px 20px;
 }
 
 .progreso-contenedor {
-    background-color: #f5f5f5;
+    background-color: var(--fondo-primario);
     padding: 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--borde-suave);
 }
 
 .progreso-barra-contenedor {
     height: 25px;
-    background-color: #ddd;
+    background-color: var(--borde-suave);
     border-radius: 12px;
     margin: 10px 0;
     overflow: hidden;
@@ -368,11 +342,12 @@ header {
 
 .progreso-barra {
     height: 100%;
-    background-color: #3498db;
+    background-color: var(--unab-azul);
     text-align: center;
     line-height: 25px;
     color: white;
     transition: width 0.3s ease;
+    min-width: 30px;
 }
 
 .lista-eventos {
@@ -393,12 +368,18 @@ header {
 }
 
 .evento-cabecera {
-    background-color: #3498db;
+    background-color: var(--unab-azul);
     color: white;
     padding: 12px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 .evento-nombre {
@@ -407,7 +388,7 @@ header {
 }
 
 .evento-horas {
-    background-color: #2c3e50;
+    background-color: var(--azul-grafito);
     color: white;
     padding: 5px 10px;
     border-radius: 12px;
@@ -416,7 +397,7 @@ header {
 
 .evento-detalles {
     padding: 15px;
-    background-color: white;
+    background-color: var(--fondo-blanco);
     display: none;
 }
 
@@ -433,7 +414,7 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 8px 10px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--borde-suave);
 }
 
 .subevento:last-child {
@@ -441,7 +422,7 @@ header {
 }
 
 .subevento-participado {
-    background-color: #e8f4fc;
+    background-color: var(--fondo-azul-suave);
 }
 
 .subevento-nombre {
@@ -450,14 +431,14 @@ header {
 
 .subevento-horas {
     font-weight: bold;
-    color: #3498db;
+    color: var(--unab-azul);
 }
 
 .evento-resumen {
-    background-color: #f9f9f9;
+    background-color: var(--fondo-gris-claro);
     padding: 10px;
     margin-top: 10px;
-    border-top: 1px solid #eee;
+    border-top: 1px solid var(--borde-suave);
     display: flex;
     justify-content: space-between;
 }
@@ -465,7 +446,7 @@ header {
 .resumen-total {
     margin-top: 20px;
     padding: 15px;
-    background-color: #2c3e50;
+    background-color: var(--azul-grafito);
     color: white;
     border-radius:  8px;
     display: flex;
@@ -478,7 +459,7 @@ header {
 }
 
 .badge-completo {
-    background-color: #27ae60;
+    background-color: var(--verde-exito);
     color: white;
     padding: 3px 8px;
     border-radius: 10px;
@@ -487,7 +468,7 @@ header {
 }
 
 .badge-pendiente {
-    background-color: #f39c12;
+    background-color: var(--unab-naranja-acento);
     color: white;
     padding: 3px 8px;
     border-radius: 10px;
@@ -497,8 +478,24 @@ header {
 
 .footer {
   background-color: rgba(255, 255, 255, 0.9);
-  color: #222;
+  color: var(--texto-primario);
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modo oscuro: contraste en el footer */
+.Modo-oscuro .footer {
+  background-color: transparent;
+  color: var(--oscuro-texto-brillante);
+}
+
+.Modo-oscuro .footer-text p {
+  background-color: var(--oscuro-superficie-2);
+  color: var(--oscuro-texto);
+}
+
+.Modo-oscuro .footer-btn {
+  background-color: var(--oscuro-superficie-2);
+  color: var(--oscuro-texto-brillante);
 }
 
 
@@ -526,7 +523,6 @@ header {
 .logo-footer {
   height: 40px;
   margin-left: 25px;
-  transform: scaleX(20px) scaleY(20px); 
 }
 
 .footer-text p {
@@ -537,7 +533,7 @@ header {
   max-width: 250px;
   border-radius: 8px;
   padding: 6px 10px;
-  background-color: #ffffff;
+  background-color: var(--fondo-blanco);
   text-decoration: none;
 
 }
@@ -557,10 +553,10 @@ header {
 }
 
 .footer-btn {
-  background-color: #ffffff;
-  color: #222;
+  background-color: var(--fondo-blanco);
+  color: var(--texto-primario);
   border: none;
-  padding: 8px 16px;
+  padding: 12px 16px;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
@@ -569,30 +565,33 @@ header {
   align-items: center;
   text-decoration: none;
   gap: 8px;
-  box-shadow: 0 2px 6px rgba(16, 190, 202, 0.6);
+  box-shadow: var(--sombra-buscador);
   transition: all 0.3s ease-in-out;
+  min-height: 44px;
 }
 
 .footer-btn:hover {
-  background-color: #F58220;
-  color: #fff;
+  background-color: var(--unab-naranja);
+  color: var(--fondo-blanco);
   transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    background: none;
-    font-size: 1.8rem;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
+    .menu-toggle {
+      display: block;
+      background: none;
+      font-size: 1.8rem;
+      border: none;
+      color: var(--unab-azul);
+      cursor: pointer;
+      min-width: 44px;
+      min-height: 44px;
+    }
 
   .nav-menu {
     display: none;
     flex-direction: column;
-    background-color: #004080;
+    background-color: var(--unab-azul-nav);
     width: 100%;
     padding: 1rem 0;
   }
@@ -606,13 +605,21 @@ header {
     border: none;
     padding: 0.5rem 1rem;
     text-align: left;
-  }
-
-  .butonNav a {
     color: white;
     text-decoration: none;
     font-size: 1rem;
     display: block;
+  }
+
+  .nav-menu a {
+    color: var(--fondo-blanco);
+    text-decoration: none;
+  }
+
+  .Buscador {
+    margin-left: 0;
+    flex: 1;
+    min-width: 0;
   }
 
   .Buscador input {
@@ -625,24 +632,6 @@ header {
 
 /* footer responsive */
 @media (max-width: 768px) {
-  .access-tileLast{
-    margin-left: 22.5vw;
-    min-width: 110px;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 8px;
-    font-weight: bold;
-    color: #00558c;
-    background-color: #007bff; /* Color de fondo azul */
-    color: white; /* Color del texto */
-    padding: 10px 15px; /* Espaciado interno */
-    border-radius: 5px; /* Bordes redondeados */
-    text-decoration: none; /* Sin subrayado */
-    text-align: center; /* Centrar texto */
-    transition: background-color 0.3s; /* Transición suave */
-    width: 20vw;
-  }
-
 
   .footer-container {
     flex-direction: column;
@@ -657,5 +646,30 @@ header {
   .footer-left {
     width: 100%;
     text-align: left;
+  }
+}
+
+/* Responsive adicional para tablets y móviles */
+@media (max-width: 600px) {
+  .info-estudiante {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .evento-cabecera {
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+  }
+
+  .resumen-total {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+
+  .progreso-contenedor {
+    padding: 16px;
   }
 }

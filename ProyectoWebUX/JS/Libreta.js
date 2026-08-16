@@ -137,11 +137,11 @@
                 eventoElement.dataset.eventoId = evento.id;
                 
                 eventoElement.innerHTML = `
-                    <div class="evento-cabecera">
-                        <div class="evento-nombre">${evento.nombre}</div>
-                        <div class="evento-horas">${horasParticipadas} / ${evento.horas} hrs</div>
-                    </div>
-                    <div class="evento-detalles">
+                    <button type="button" class="evento-cabecera" aria-expanded="false" aria-controls="detalles-${evento.id}">
+                        <span class="evento-nombre">${evento.nombre}</span>
+                        <span class="evento-horas">${horasParticipadas} / ${evento.horas} hrs</span>
+                    </button>
+                    <div class="evento-detalles" id="detalles-${evento.id}">
                         <div class="evento-descripcion">${evento.descripcion}</div>
                         <h4>Subeventos:</h4>
                         <div class="lista-subeventos">
@@ -164,8 +164,9 @@
                 
                 // Agregar evento para mostrar/ocultar detalles
                 eventoElement.querySelector('.evento-cabecera').addEventListener('click', function() {
-                    const detalles = this.nextElementSibling;
-                    detalles.classList.toggle('activo');
+                    const detalles = document.getElementById('detalles-' + evento.id);
+                    const expandido = detalles.classList.toggle('activo');
+                    this.setAttribute('aria-expanded', expandido ? 'true' : 'false');
                 });
                 
                 listaEventosElement.appendChild(eventoElement);
@@ -181,17 +182,3 @@
 
         // Iniciar la aplicación cuando el documento esté cargado
         document.addEventListener('DOMContentLoaded', inicializar);
-
-
-let toggle=document.getElementById('toggle');
-toggle.addEventListener('change',(event)=>{
-    let checked=event.target.checked;
-    document.body.classList.toggle('Modo-oscuro');
-    if (checked == true){
-        label_toggle.innerHTML='<i class="fa-solid fa-sun fa-2xl" style="color: #FFD43B;"></i>'
-    }else{
-        label_toggle.innerHTML='<i class="fa-solid fa-moon fa-2xl"></i>'
-    }
-})
-
-console.log("Universo alterno")

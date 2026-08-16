@@ -1,0 +1,350 @@
+/* =========================================================
+   Layout.css — Estilos compartidos del portal UNAB
+   Header, navegación, buscador, toggle de modo oscuro,
+   footer y su bloque responsive. Cargado por todas las
+   páginas internas (requiere Global.css primero).
+   ========================================================= */
+
+/* ----- Reset mínimo de layout ----- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* =========================================================
+   Header
+   ========================================================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--fondo-header-alt);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.encabezado-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.logo-section img:first-child {
+  height: 35px;
+}
+
+.logo-unab {
+  height: 40px;
+}
+
+/* ----- Buscador ----- */
+.Buscador {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  border-radius: 5px;
+  padding: 2px 10px;
+  margin-right: 10px;
+  box-shadow: var(--sombra-buscador);
+}
+
+.Buscador input {
+  border: none;
+  outline: none;
+  padding: 6px;
+  width: 200px;
+}
+
+.Buscador input:focus-visible {
+  outline: 2px solid var(--unab-azul);
+  outline-offset: 2px;
+}
+
+/* ----- Botón hamburguesa (oculto en desktop) ----- */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: var(--unab-azul);
+  cursor: pointer;
+  margin-left: 20px;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* ----- Navegación ----- */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  flex-direction: row-reverse;
+  margin-left: 20px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--texto-primario);
+  font-size: 15px;
+  transition: color 0.3s;
+}
+
+/* El enlace de la página actual se destaca */
+.nav-menu a[aria-current="page"] {
+  background-color: var(--unab-azul);
+  color: var(--fondo-blanco);
+}
+
+.butonNav {
+  background-color: var(--unab-azul-claro);
+  padding: 6px 12px;
+  width: 80px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.butonNav:hover {
+  background-color: var(--unab-naranja);
+  color: white;
+  transform: scale(1.05);
+}
+
+.butonNav:hover {
+  color: white;
+}
+
+/* =========================================================
+   Toggle de modo oscuro (visualmente accesible)
+   ========================================================= */
+#toggle {
+  position: absolute;
+  width: 1px;
+  padding: 0;
+  margin: 1px;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+#toggle:focus-visible + #label_toggle {
+  outline: 3px solid var(--unab-azul);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+#label_toggle {
+  cursor: pointer;
+  margin-left: 60px;
+  padding: 6px 12px;
+}
+
+/* =========================================================
+   Footer
+   ========================================================= */
+.footer {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--texto-primario);
+  padding: 12px 20px;
+  width: 100%;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 26px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-width: 240px;
+}
+
+.logo-footer {
+  height: 40px;
+  margin-left: 25px;
+}
+
+.footer-text p {
+  margin: 0 0 0 20px;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 5px 7px rgba(202, 143, 16, 0.4);
+  max-width: 250px;
+  border-radius: 8px;
+  padding: 6px 10px;
+  background-color: var(--fondo-blanco);
+}
+
+.footer-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: 260px;
+}
+
+.footer-btn {
+  background-color: var(--fondo-blanco);
+  color: var(--texto-primario);
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  box-shadow: var(--sombra-buscador);
+  transition: all 0.3s ease-in-out;
+  min-height: 44px;
+}
+
+.footer-btn:hover {
+  background-color: var(--unab-naranja);
+  color: var(--fondo-blanco);
+  transform: translateY(-2px);
+}
+
+.icon-cursor {
+  height: 16px;
+  width: 16px;
+}
+
+/* =========================================================
+   Modo oscuro (común a todas las páginas)
+   ========================================================= */
+.Modo-oscuro {
+  background: var(--oscuro-fondo-gradiente);
+  background-size: 400% 400%;
+  transition: all 1.5s ease;
+}
+
+.Modo-oscuro header {
+  background: var(--oscuro-header);
+  color: white;
+}
+
+.Modo-oscuro footer {
+  background: var(--oscuro-footer);
+}
+
+/* Modo oscuro: contraste en el footer */
+.Modo-oscuro .footer {
+  background-color: transparent;
+  color: var(--oscuro-texto-brillante);
+}
+
+.Modo-oscuro .footer-text p {
+  background-color: var(--oscuro-superficie-2);
+  color: var(--oscuro-texto);
+}
+
+.Modo-oscuro .footer-btn {
+  background-color: var(--oscuro-superficie-2);
+  color: var(--oscuro-texto-brillante);
+}
+
+/* =========================================================
+   Responsive — layout para tablet / móvil
+   ========================================================= */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--unab-azul-nav);
+    width: 100%;
+    padding: 1rem 0;
+    margin-left: 0;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .butonNav {
+    background-color: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    text-align: left;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    display: block;
+    width: auto;
+  }
+
+  .nav-menu a {
+    color: var(--fondo-blanco);
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  .nav-menu a[aria-current="page"] {
+    background-color: transparent;
+    color: var(--unab-naranja-acento);
+    font-weight: 700;
+  }
+
+  .Buscador input {
+    width: 100%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .footer-left {
+    width: 100%;
+    text-align: left;
+  }
+}

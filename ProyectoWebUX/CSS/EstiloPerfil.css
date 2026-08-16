@@ -4,74 +4,71 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #fbfeff;
+  background-color: var(--fondo-header-alt);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
 /* clases cambiar modo oscuro */
 .Modo-oscuro header{
 
-  background: linear-gradient(to right, #101c44, #162450, #0a132d);
+  background: var(--oscuro-header);
 
   color: white;
 
 }
 .Modo-oscuro{
-  background: linear-gradient(to bottom, #0a0f29, #162050, #1b2b5c, #29408e);
+  background: var(--oscuro-fondo-gradiente);
   transition: all 1.5s ease;
 }
 
 .Modo-oscuro footer{
-    background: linear-gradient(to top, #0a0f29, #101c44, #162450);
-    padding: 20px;
-    text-align: center;
+    background: var(--oscuro-footer);
 
 }
 
 .Modo-oscuro .card{
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(30, 30, 30, 0.9));
-  color: #fff; /* blanco para contrastar bien */
+  background: var(--oscuro-superficie-2);
+  color: var(--oscuro-texto-brillante); /* blanco para contrastar bien */
 }
 
-/* Ocultar el checkbox original */
+.Modo-oscuro .card h3 {
+  color: var(--unab-azul-claro);
+}
+
+.Modo-oscuro .access-tile,
+.Modo-oscuro .access-tileLast {
+  background-color: var(--oscuro-acento);
+  color: var(--oscuro-texto-brillante);
+}
+
+/* Ocultar el checkbox original (se mantiene accesible por teclado) */
 #toggle {
-    display: none;
-}
-
-/* Estilo del contenedor */
-.toggle-label {
-    display: inline-block;
-    width: 50px;
-    height: 25px;
-    background: linear-gradient(to right, #0f172f, #162040);
-    border-radius: 50px;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-/* El círculo dentro del switch */
-.toggle-label::after {
-    content: "";
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    transition: 0.3s;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
 }
 
-/* Cambio de estado cuando se activa */
-#toggle:checked + .toggle-label {
-    background: linear-gradient(to right, #1f2e6d, #29408e);
+#toggle:focus-visible + #label_toggle {
+    outline: 3px solid var(--unab-azul);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
-#toggle:checked + .toggle-label::after {
-    left: calc(100% - 25px);
-    background: #00bfff;
+#label_toggle {
+    color: var(--texto-primario);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+.Modo-oscuro #label_toggle {
+    color: var(--oscuro-texto-brillante);
 }
 
 /* clases cambiar modo oscuro */
@@ -84,7 +81,7 @@ header {
     border-radius: 5px;
     padding: 2px 10px;
     margin-right: 10px;
-    box-shadow: 0 2px 6px rgb(16, 190, 202);
+    box-shadow: var(--sombra-buscador);
   }
 
 .Buscador input {
@@ -92,6 +89,11 @@ header {
     outline: none;
     padding: 6px;
     width: 200px;
+}
+
+.Buscador input:focus-visible {
+    outline: 2px solid var(--unab-azul);
+    outline-offset: 2px;
 }
 
 .encabezado-container {
@@ -107,7 +109,7 @@ header {
 .logo-section {
   display: flex;
   align-items: center;
-  gap: 40px; 
+  gap: 35px;
 }
 
 .logo-section img:first-child {
@@ -118,20 +120,11 @@ header {
   height: 40px;
 }
 
-.nav-menu {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: center;
-  gap: 50px;
-  width: 100%;
-  margin-left: 40px; 
-}
-
 /* Navegación + luna */
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 45px;
+  gap: 50px;
   width: 100%;
   flex-direction: row-reverse;
   margin-left: 20px; /* Espacio entre el botón de menú y la navegación */
@@ -140,26 +133,25 @@ header {
 
 .nav-menu a {
   text-decoration: none;
-  color: #423333;
+  color: var(--texto-primario);
   font-size: 15px;
   transition: color 0.3s;
 }
 
 
 .butonNav {
-  background-color: #5CCCF6;
-  padding: 4px 12px;
-  margin-top: 3px;
-  width: 100px;
+  background-color: var(--unab-azul-claro);
+  padding: 6px 12px;
+  width: 80px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .butonNav:hover {
-  background-color: #F58220;
+  background-color: var(--unab-naranja);
   color: white;
   transform: scale(1.05);
   transition: transform 0.3s;
@@ -181,17 +173,8 @@ text-align: center;
 }
 
 /* apartado perfil */
-.foto-perfil {
-  width: 120px;
-  height: 120px;
-  margin-top: 5px;
-  object-fit: cover;
-  border: 3px solid #00558c;
-
-}
-
 .btn-upload {
-    background-color: #007bff;
+    background-color: var(--unab-azul-accion);
     color: white;
     padding: 6px 12px;
     border: none;
@@ -204,11 +187,26 @@ text-align: center;
 }
 
 .btn-upload:hover {
-    background-color: #003f6d;
+    background-color: var(--unab-azul-accion-oscuro);
 }
 
+/* El input de archivo se oculta visualmente pero sigue enfocable por teclado */
 input[type="file"] {
-    display: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+input[type="file"]:focus-visible + .btn-upload {
+    outline: 3px solid var(--unab-azul);
+    outline-offset: 2px;
+    border-radius: 5px;
 }
 
 .card {
@@ -224,13 +222,13 @@ input[type="file"] {
     margin: 30px auto; /* Centrar el contenedor */
     padding: 20px; /* Espaciado interno */
     border-radius: 8px; /* Bordes redondeados */
-    margin-top: 60px;
+    margin-top: 70px;
 }
 
 
 .card h3 {
     margin-top: 0; /* Sin margen superior */
-    color: #007bff; /* Color del título */
+    color: var(--unab-azul-accion); /* Color del título */
     text-align: center; /* Centrar el texto del título */
 }
 
@@ -273,27 +271,6 @@ input[type="file"] {
 }
 
 .quick-access {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-
-button {
-  background-color: #00558c;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 1rem;
-}
-
-button:hover {
-  background-color: #003f6d;
-}
-
-.quick-access {
     display: flex;
     flex-wrap: wrap;
     gap: 10px; /* Espacio entre botones */
@@ -307,8 +284,8 @@ button:hover {
     padding: 1rem;
     border-radius: 8px;
     font-weight: bold;
-    color: #00558c;
-    background-color: #007bff;
+    color: var(--unab-azul-hover);
+    background-color: var(--unab-azul-accion);
     color: white; 
     padding: 10px 15px; 
     border-radius: 5px; 
@@ -324,8 +301,8 @@ button:hover {
     padding: 1rem;
     border-radius: 8px;
     font-weight: bold;
-    color: #00558c;
-    background-color: #007bff; /* Color de fondo azul */
+    color: var(--unab-azul-hover);
+    background-color: var(--unab-azul-accion); /* Color de fondo azul */
     color: white; /* Color del texto */
     padding: 10px 15px; /* Espaciado interno */
     border-radius: 5px; /* Bordes redondeados */
@@ -336,7 +313,7 @@ button:hover {
 }
 .access-tileLast:hover,
 .access-tile:hover {
-    background-color: #0056b3; 
+    background-color: var(--unab-azul-accion-hover); 
 }
 
 html, body {
@@ -364,7 +341,7 @@ body {
 /* Fondo animado */
 html {
   height: 100%;
-  background: linear-gradient(-45deg, #5262ee, #2ec9d4, #5897ad, #23d5ab);
+  background: var(--gradiente-fondo);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
 }
@@ -385,10 +362,26 @@ html {
 /* Footer general */
 .footer {
   background-color: rgba(255, 255, 255, 0.9);
-  color: #222;
+  color: var(--texto-primario);
   padding: 12px 20px;
   width: 100%;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Modo oscuro: contraste en el footer */
+.Modo-oscuro .footer {
+  background-color: transparent;
+  color: var(--oscuro-texto-brillante);
+}
+
+.Modo-oscuro .footer-text p {
+  background-color: var(--oscuro-superficie-2);
+  color: var(--oscuro-texto);
+}
+
+.Modo-oscuro .footer-btn {
+  background-color: var(--oscuro-superficie-2);
+  color: var(--oscuro-texto-brillante);
 }
 
 
@@ -413,7 +406,6 @@ html {
 .logo-footer {
   height: 40px;
   margin-left: 25px;
-  transform: scaleX(20px) scaleY(20px); 
 }
 
 .footer-text p {
@@ -424,7 +416,7 @@ html {
   max-width: 250px;
   border-radius: 8px;
   padding: 6px 10px;
-  background-color: #ffffff;
+  background-color: var(--fondo-blanco);
 }
 
 
@@ -440,10 +432,10 @@ html {
 }
 
 .footer-btn {
-  background-color: #ffffff;
-  color: #222;
+  background-color: var(--fondo-blanco);
+  color: var(--texto-primario);
   border: none;
-  padding: 8px 16px;
+  padding: 12px 16px;
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
@@ -451,30 +443,33 @@ html {
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 2px 6px rgba(16, 190, 202, 0.6);
+  box-shadow: var(--sombra-buscador);
   transition: all 0.3s ease-in-out;
+  min-height: 44px;
 }
 
 .footer-btn:hover {
-  background-color: #F58220;
-  color: #fff;
+  background-color: var(--unab-naranja);
+  color: var(--fondo-blanco);
   transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    background: none;
-    font-size: 1.8rem;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
+    .menu-toggle {
+      display: block;
+      background: none;
+      font-size: 1.8rem;
+      border: none;
+      color: var(--unab-azul);
+      cursor: pointer;
+      min-width: 44px;
+      min-height: 44px;
+    }
 
   .nav-menu {
     display: none;
     flex-direction: column;
-    background-color: #004080;
+    background-color: var(--unab-azul-nav);
     width: 100%;
     padding: 1rem 0;
   }
@@ -488,13 +483,15 @@ html {
     border: none;
     padding: 0.5rem 1rem;
     text-align: left;
-  }
-
-  .butonNav a {
     color: white;
     text-decoration: none;
     font-size: 1rem;
     display: block;
+  }
+
+  .nav-menu a {
+    color: var(--fondo-blanco);
+    text-decoration: none;
   }
 
   .Buscador input {
@@ -514,8 +511,8 @@ html {
     padding: 1rem;
     border-radius: 8px;
     font-weight: bold;
-    color: #00558c;
-    background-color: #007bff; /* Color de fondo azul */
+    color: var(--unab-azul-hover);
+    background-color: var(--unab-azul-accion); /* Color de fondo azul */
     color: white; /* Color del texto */
     padding: 10px 15px; /* Espaciado interno */
     border-radius: 5px; /* Bordes redondeados */

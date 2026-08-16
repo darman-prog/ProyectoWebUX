@@ -4,49 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/Global.css">
+    <link rel="stylesheet" href="../CSS/Layout.css">
     <link rel="stylesheet" href="../CSS/EstiloEventos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="https://unab.edu.co/congresofacultadsalud/wp-content/uploads/sites/4/2022/09/cropped-favicon-azul-32x32.png" sizes="32x32">
+    <script defer src="../JS/components.js"></script>
+    <script defer src="../JS/shared.js"></script>
     <script defer src="../JS/Eventos.js"></script>
     <title>Eventos UNAB</title>
 </head>
 
 <body>
-    <header >
-        <div class="encabezado-container">
-            <div class="logo-section">
-                <img src="../IMG/CampanaNoti.png" alt="Campana" class="campana">
-                <img src="../IMG/FacultadMedicina.png" alt="Logo UNAB" class="logo-unab">
-            </div>
-            <div class="Buscador">
-                <input type="text" placeholder="Buscar en el portal..." aria-label="Buscar">
-            </div>
-            <nav class="nav-menu">
-                <button class="butonNav"><a href="Libreta.html" >Libreta</a></button>
-                <button class="butonNav"><a href="Eventos.html" >Eventos</a></button>
-                <button class="butonNav"><a href="Cursos.html" >Cursos</a></button>
-                <button class="butonNav"><a href="Perfil.html" >Perfil</a></button>
-                <button class="butonNav"><a href="MainUnab.html" >Inicio</a></button>
-                <label for="toggle" id="label_toggle" alt="Cambiar a modo"><i class="fa-solid fa-moon fa-2xl"></i></label>
-                <input type="checkbox" id="toggle">
-            </nav>
-        </div>
-    </header>
+    <div data-portal-header="eventos"></div>
     <br>
     <div class="ContenedorTitulo">
         <h1 class="TituloHorario">Eventos UNAB 2025</h1>
     </div>
     <div class="contenedor-carrusel">
-        <div class="carrusel">
+        <div class="carrusel" tabindex="0" aria-roledescription="carrusel" aria-label="Galería de eventos UNAB">
             <div class="carrusel-interior" id="carruselInterior">
 
-                <img src="https://unab.edu.co/wp-content/uploads/2023/04/breves-unab-fest-1024x575.jpg" alt="Evento 1" class="carrusel-imagen activa" data-indice="0">
-                <img src="https://ulibro.com/wp-content/uploads/2025/02/poster-ulibro-2025.jpg" alt="Evento 2" class="carrusel-imagen" data-indice="1">
-                <img src="https://unab.edu.co/wp-content/uploads/2025/05/UNABFest2025-1.jpg" alt="Evento 3" class="carrusel-imagen" data-indice="2">
-                <img src="https://unab.edu.co/wp-content/uploads/2025/05/POST-1_CONGRESO-SALUD-1-819x1024.png" alt="Evento 4" class="carrusel-imagen" data-indice="3">
+                <img src="https://unab.edu.co/wp-content/uploads/2023/04/breves-unab-fest-1024x575.jpg" alt="Imagen del festival Unab Fest" class="carrusel-imagen activa" data-indice="0">
+                <img src="https://ulibro.com/wp-content/uploads/2025/02/poster-ulibro-2025.jpg" alt="Cartel de la feria del libro Ulibro" class="carrusel-imagen" data-indice="1" aria-hidden="true">
+                <img src="https://unab.edu.co/wp-content/uploads/2025/05/UNABFest2025-1.jpg" alt="Semana de Ingeniería UNAB" class="carrusel-imagen" data-indice="2" aria-hidden="true">
+                <img src="https://unab.edu.co/wp-content/uploads/2025/05/POST-1_CONGRESO-SALUD-1-819x1024.png" alt="Cartel del Congreso Feria Internacional de la Salud" class="carrusel-imagen" data-indice="3" aria-hidden="true">
                 
                 <!-- Descripciones  -->
-                <div class="carrusel-descripcion">
+                <div class="carrusel-descripcion" aria-live="polite">
                     <h3 class="carrusel-titulo">Título del Evento 1</h3>
                     <p class="carrusel-texto">Descripción detallada del primer evento. Aquí puedes añadir toda la información relevante sobre este evento en particular.</p>
                 </div>
@@ -54,13 +38,13 @@
             
             <!-- Botones de navegación -->
             <div class="carrusel-navegacion">
-                <button class="carrusel-boton" id="botonAnterior">
-                    <svg viewBox="0 0 24 24">
+                <button class="carrusel-boton" id="botonAnterior" aria-label="Evento anterior">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                         <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
                     </svg>
                 </button>
-                <button class="carrusel-boton" id="botonSiguiente">
-                    <svg viewBox="0 0 24 24">
+                <button class="carrusel-boton" id="botonSiguiente" aria-label="Evento siguiente">
+                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
                         <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
                     </svg>
                 </button>
@@ -71,32 +55,7 @@
         <div class="carrusel-indicadores" id="indicadores"></div>
     </div>
     <br>
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-left">
-                <div class="footer-text">
-                    <p>Universidad Autónoma De Bucaramanga <br> © Todos los derechos reservados</p>
-                </div>
-            </div>
-            <div class="footer-buttons">
-                    <a href="https://pasaporte.unab.edu.co/" target="_blank"  class="footer-btn">
-                    Encuestas
-                    <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor">
-                    </a>
-                    
-                    <a href="https://unab.edu.co/contactanos/"  target="_blank" class="footer-btn">
-                    Consultas 
-                    <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor">
-                    </a>
-
-                    <a href="https://clic.kayako.com/" target="_blank"  class="footer-btn">
-                    Preguntas frecuentes
-                    <img src="../IMG/cursor 2.png" alt="Cursor" class="icon-cursor">
-                    </a>
-            </div>
-        </div>
-    </footer>
-
+    <div data-portal-footer></div>
 
 </body>
 </html>

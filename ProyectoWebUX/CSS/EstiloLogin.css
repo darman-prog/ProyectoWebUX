@@ -8,7 +8,7 @@
 
 @keyframes fadeInBody {
   from { opacity: 0; }
-  to { opacity: 0.90; }
+  to { opacity: 1; }
 }
 
 
@@ -64,7 +64,7 @@
 /* Panel derecho con login */
 .right-panel {
   flex: 1;
-  background-color: #00b1f1ae  ;
+  background-color: var(--unab-azul);
   
   display: flex;
   justify-content: center;
@@ -75,7 +75,7 @@
 .login-container {
   width: 100%;
   max-width: 430px;
-  background-color: #ffffff;
+  background-color: var(--fondo-blanco);
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -90,11 +90,11 @@
 
 h2 {
   margin-bottom: 30px;
-  color: #333;
+  color: var(--texto-secundario);
 }
 
 input:focus {
-  border-color: #ff9900;
+  border-color: var(--unab-naranja-acento);
   outline: none;
   box-shadow: 0 0 5px rgba(255, 153, 0, 0.5);
 }
@@ -108,27 +108,32 @@ input:focus {
   display: block;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #444;
+  color: var(--texto-secundario);
 }
 
 .input-group input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #bbb;
+  border: 1px solid var(--borde-medio);
   border-radius: 6px;
   font-size: 14px;
 }
 
 .input-group input:focus {
-  border-color: #f58220;
+  border-color: var(--unab-naranja);
   outline: none;
+}
+
+.input-group input:focus-visible {
+  outline: 3px solid var(--unab-azul);
+  outline-offset: 2px;
 }
 
 .forgot-password {
   float: right;
   font-size: 12px;
   margin-bottom: 5px;
-  color: #f58220;
+  color: var(--unab-naranja);
   text-decoration: none;
 }
 
@@ -137,19 +142,22 @@ input:focus {
 }
 
 .login-btn {
+  display: block;
   width: 100%;
-  background-color: #f58220;
+  background-color: var(--unab-naranja);
   color: white;
   border: none;
   padding: 12px;
   font-size: 16px;
   border-radius: 6px;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
   transition: background-color 0.3s;
 }
 
 .login-btn:hover {
-  background-color: #e07000;
+  background-color: var(--unab-naranja-hover);
 }
 
 /* iconos estilizados */
@@ -162,13 +170,6 @@ input:focus {
   width: 100%;
 }
 
-.IngresarLink {
-  text-decoration: none;
-  color: #f3f2f1;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
 
 .toggle-password {
   position: absolute;
@@ -176,7 +177,11 @@ input:focus {
   right: 10px;
   transform: translateY(-50%);
   cursor: pointer;
-  color: #aaa;
+  color: var(--texto-atenuado);
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 16px;
 }
 
 
@@ -184,8 +189,8 @@ input:focus {
 
 /* Footer */
 .footer-unab {
-  background-color: #77a5e4;
-  color: #130909;
+  background-color: var(--unab-azul-claro);
+  color: var(--texto-primario);
   max-height: 100px;
   padding: 20px 0;
   text-align: center;
@@ -215,6 +220,31 @@ input:focus {
   max-width: 250px;
   border-radius: 8px;
   padding: 6px 10px;
-  background-color: #ffffff;
+  background-color: var(--fondo-blanco);
+}
+
+/* Responsive: en tablets y móviles se prioriza el formulario de login */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+
+  .left-panel {
+    display: none;
+  }
+
+  .login-container {
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 24px 16px;
+  }
+
+  .footer-unab {
+    padding: 16px 0;
+  }
 }
 

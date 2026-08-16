@@ -7,10 +7,17 @@ togglePassword.addEventListener('click', function () {
   const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
   passwordInput.setAttribute('type', type);
 
-  // Alternar ícono de ojo
-  this.classList.toggle('fa-eye-slash');
-  this.classList.toggle('fa-eye');
-
+  // Alternar ícono de ojo y estado accesible
+  const icono = this.querySelector('i');
+  if (icono) {
+    icono.classList.toggle('fa-eye-slash');
+    icono.classList.toggle('fa-eye');
+  }
+  if (type === 'text') {
+    this.setAttribute('aria-label', 'Ocultar contraseña');
+  } else {
+    this.setAttribute('aria-label', 'Mostrar contraseña');
+  }
 });
 
 // animacion ojo y cambio de placeholder
@@ -20,6 +27,9 @@ let index = 0;
 function showNextSlide() {
   slides.forEach((slide) => slide.classList.remove('active'));
   slides[index].classList.add('active');
+  slides.forEach((slide, i) => {
+    slide.setAttribute('aria-hidden', i === index ? 'false' : 'true');
+  });
   index = (index + 1) % slides.length;
 }
 

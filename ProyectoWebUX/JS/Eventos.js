@@ -24,6 +24,7 @@ const carruselInterior = document.getElementById('carruselInterior');
 const imagenes = document.querySelectorAll('.carrusel-imagen');
 const botonAnterior = document.getElementById('botonAnterior');
 const botonSiguiente = document.getElementById('botonSiguiente');
+const carrusel = document.querySelector('.carrusel');
 const descripcion = document.querySelector('.carrusel-descripcion');
 const titulo = document.querySelector('.carrusel-titulo');
 const texto = document.querySelector('.carrusel-texto');
@@ -35,9 +36,14 @@ const totalImagenes = imagenes.length;
             // Crear indicadores
 function crearIndicadores() {
     for (let i = 0; i < totalImagenes; i++) {
-        const indicador = document.createElement('div');
+        const indicador = document.createElement('button');
+        indicador.type = 'button';
         indicador.classList.add('indicador');
-        if (i === 0) indicador.classList.add('activo');
+        indicador.setAttribute('aria-label', 'Ir al evento ' + (i + 1));
+        if (i === 0) {
+            indicador.classList.add('activo');
+            indicador.setAttribute('aria-current', 'true');
+        }
         indicador.dataset.indice = i;
         
         indicador.addEventListener('click', function() {
@@ -54,10 +60,23 @@ function actualizarDescripcion() {
   texto.textContent = datosEventos[indiceActual].descripcion;
 }
 
+// Actualizar estado de accesibilidad de las imágenes
+function actualizarAccesibilidad() {
+    imagenes.forEach(function (imagen, i) {
+        if (i === indiceActual) {
+            imagen.setAttribute('aria-hidden', 'false');
+        } else {
+            imagen.setAttribute('aria-hidden', 'true');
+        }
+    });
+}
+
 // Cambiar imagen
 function cambiarImagen(nuevoIndice) {
     imagenes[indiceActual].classList.remove('activa');
-    document.querySelectorAll('.indicador')[indiceActual].classList.remove('activo');
+    const indicadores = document.querySelectorAll('.indicador');
+    indicadores[indiceActual].classList.remove('activo');
+    indicadores[indiceActual].removeAttribute('aria-current');
     
     indiceActual = nuevoIndice;
     
@@ -66,13 +85,16 @@ function cambiarImagen(nuevoIndice) {
     if (indiceActual >= totalImagenes) indiceActual = 0;
     
     imagenes[indiceActual].classList.add('activa');
-    document.querySelectorAll('.indicador')[indiceActual].classList.add('activo');
+    indicadores[indiceActual].classList.add('activo');
+    indicadores[indiceActual].setAttribute('aria-current', 'true');
     actualizarDescripcion();
+    actualizarAccesibilidad();
 }
 
 // Inicializar
 crearIndicadores();
 actualizarDescripcion();
+actualizarAccesibilidad();
             
 // Eventos de clic para botones de navegación
 botonAnterior.addEventListener('click', function() {
@@ -83,26 +105,27 @@ botonSiguiente.addEventListener('click', function() {
     cambiarImagen(indiceActual + 1);
 });
 
+// Navegación con teclado sobre el carrusel
+if (carrusel) {
+    carrusel.addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowLeft') {
+            event.preventDefault();
+            cambiarImagen(indiceActual - 1);
+        } else if (event.key === 'ArrowRight') {
+            event.preventDefault();
+            cambiarImagen(indiceActual + 1);
+        } else if (event.key === 'Home') {
+            event.preventDefault();
+            cambiarImagen(0);
+        } else if (event.key === 'End') {
+            event.preventDefault();
+            cambiarImagen(totalImagenes - 1);
+        }
+    });
+}
+
 // Mostrar/ocultar descripción al hacer clic en la imagen
 carruselInterior.addEventListener('click', function() {
     carruselInterior.classList.toggle('mostrar-descripcion');
 });
-});
-
-let toggle=document.getElementById('toggle');
-toggle.addEventListener('change',(event)=>{
-    let checked=event.target.checked;
-    document.body.classList.toggle('Modo-oscuro');
-    if (checked == true){
-        label_toggle.innerHTML='<i class="fa-solid fa-sun fa-2xl" style="color: #FFD43B;"></i>'
-    }else{
-        label_toggle.innerHTML='<i class="fa-solid fa-moon fa-2xl"></i>'
-    }
-})
-
-document.addEventListener("DOMContentLoaded", () => {
-const contenedor = document.getElementById("contenedorMain");
-setTimeout(() => {
-    contenedor.style.left = "0";
-}, 80); 
 });

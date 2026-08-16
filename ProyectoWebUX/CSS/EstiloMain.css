@@ -6,7 +6,6 @@
 }
 
 body {
-  animation: fadeOut 0.5s ease forwards;
   animation: fadeIn 0.7s ease forwards;
 }
 
@@ -15,17 +14,12 @@ body {
   to { opacity: 1; }
 }
 
-@keyframes fadeOut {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #e2f1f7;
+  background-color: var(--fondo-header-alt);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 }
@@ -39,7 +33,7 @@ header {
     border-radius: 5px;
     padding: 2px 10px;
     margin-right: 10px;
-    box-shadow: 0 2px 6px rgb(16, 190, 202);
+    box-shadow: var(--sombra-buscador);
   }
 
 .Buscador input {
@@ -47,6 +41,11 @@ header {
     outline: none;
     padding: 6px;
     width: 200px;
+}
+
+.Buscador input:focus-visible {
+    outline: 2px solid var(--unab-azul);
+    outline-offset: 2px;
 }
 
 .encabezado-container {
@@ -85,14 +84,14 @@ header {
 
 .nav-menu a {
   text-decoration: none;
-  color: #171111;
-  font-size: 14px;
+  color: var(--texto-primario);
+  font-size: 15px;
   transition: color 0.3s;
 }
 
 
 .butonNav {
-  background-color: #5CCCF6;
+  background-color: var(--unab-azul-claro);
   padding: 6px 12px;
   width: 80px;
   border: none;
@@ -105,7 +104,7 @@ header {
 
 
 .butonNav:hover {
-  background-color: #F58220;
+  background-color: var(--unab-naranja);
   color: white;
   transform: scale(1.05);
   transition: transform 0.3s;
@@ -118,19 +117,17 @@ header {
 /* clases cambiar modo oscuro */
 .Modo-oscuro header{
 
-  background: linear-gradient(to right, #101c44, #162450, #0a132d);
+  background: var(--oscuro-header);
   color: white;
 
 }
 .Modo-oscuro{
-  background: linear-gradient(to bottom, #0a0f29, #162050, #1b2b5c, #29408e);
+  background: var(--oscuro-fondo-gradiente);
   transition: all 1.5s ease;
 }
 
 .Modo-oscuro footer{
-    background: linear-gradient(to top, #0a0f29, #101c44, #162450);
-    padding: 20px;
-    text-align: center;
+    background: var(--oscuro-footer);
 
 }
 
@@ -139,53 +136,10 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #0d0b22;
+  background-color: var(--oscuro-superficie);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-}
-
-/* Ocultar el checkbox original */
-#toggle {
-    display: none;
-}
-
-/* Estilo del contenedor */
-.toggle-label {
-    display: inline-block;
-    width: 50px;
-    height: 25px;
-    background: linear-gradient(to right, #0f172f, #162040);
-    border-radius: 50px;
-    position: relative;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-
-
-/* El círculo dentro del switch */
-.toggle-label::after {
-    content: "";
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    transition: 0.3s;
-}
-
-/* Cambio de estado cuando se activa */
-#toggle:checked + .toggle-label {
-    background: linear-gradient(to right, #1f2e6d, #29408e);
-}
-
-#toggle:checked + .toggle-label::after {
-    left: calc(100% - 25px);
-    background: #00bfff;
 }
 
 /* clases cambiar modo oscuro */
@@ -193,7 +147,7 @@ header {
 /* final de estilos header */
 /* estilacions Cuerpo de pagina */
 .ContenedorTitulo {
-  background-color: #F58220;
+  background-color: var(--unab-naranja);
   border-radius: 10px;
   padding: 16px 24px;
   max-width: 800px;
@@ -205,22 +159,22 @@ header {
 
 .TituloPrincipal {
   font-size: 28px;
-  color: #FFF6F6;
+  color: var(--fondo-blanco);
   margin: 0;
   font-weight: bold;
-  line-height: 2;
+  line-height: 1.5;
 }
 
 body {
-  padding-top: 60px;
-  background: #1f9cf0;
+  padding-top: 70px;
+  background: var(--unab-azul);
 }
 
 .main-content{
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #F5F5F5;
+  background-color: var(--fondo-primario);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -236,15 +190,12 @@ body {
   background-color: white;
   border-radius: 8px;
   padding: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--sombra-media);
   transition: transform 0.3s;
   display: flex;
   align-items: center;
   text-align: center;
   font-size: larger;
-  box-shadow: 0px 3px 11px 2px rgba(50,104,242,0.42);
--webkit-box-shadow: 0px 3px 11px 2px rgba(50,104,242,0.42);
--moz-box-shadow: 0px 3px 11px 2px rgba(50,104,242,0.42);
 }
 
 .card:hover {
@@ -279,7 +230,7 @@ main {
 
 .footer {
   background-color: rgba(255, 255, 255, 0.9);
-  color: #222;
+  color: var(--texto-primario);
   padding: 12px 20px;
   width: 100%;
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
@@ -307,7 +258,6 @@ main {
 .logo-footer {
   height: 40px;
   margin-left: 25px;
-  transform: scaleX(20px) scaleY(20px); 
 }
 
 .footer-text p {
@@ -318,7 +268,7 @@ main {
   max-width: 250px;
   border-radius: 8px;
   padding: 6px 10px;
-  background-color: #ffffff;
+  background-color: var(--fondo-blanco);
 }
 
 
@@ -333,25 +283,57 @@ main {
 }
 
 .footer-btn {
-  background-color: #ffffff;
-  color: #222;
+  background-color: var(--fondo-blanco);
+  color: var(--texto-primario);
   border: none;
-  padding: 8px 16px;
+  padding: 12px 16px;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
-  box-shadow: 0 2px 6px rgba(16, 190, 202, 0.6);
+  box-shadow: var(--sombra-buscador);
   transition: all 0.3s ease-in-out;
+  min-height: 44px;
 }
 
 .footer-btn:hover {
-  background-color: #F58220;
-  color: #fff;
+  background-color: var(--unab-naranja);
+  color: var(--fondo-blanco);
   transform: translateY(-2px);
+}
+
+/* =========================================================
+   Modo oscuro: contraste y accesibilidad
+   ========================================================= */
+.Modo-oscuro .nav-menu a {
+  color: var(--oscuro-texto-brillante);
+}
+
+.Modo-oscuro .menu-toggle {
+  color: var(--oscuro-texto-brillante);
+}
+
+.Modo-oscuro .card {
+  background-color: var(--oscuro-superficie-2);
+  color: var(--oscuro-texto);
+}
+
+.Modo-oscuro .footer {
+  background-color: transparent;
+  color: var(--oscuro-texto-brillante);
+}
+
+.Modo-oscuro .footer-text p {
+  background-color: var(--oscuro-superficie-2);
+  color: var(--oscuro-texto);
+}
+
+.Modo-oscuro .footer-btn {
+  background-color: var(--oscuro-superficie-2);
+  color: var(--oscuro-texto-brillante);
 }
 
 
@@ -362,12 +344,14 @@ main {
   font-size: 24px;
   background: none;
   border: none;
-  color: white;
+  color: var(--unab-azul);
   cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
 }
 
-/* Mostrar solo en móviles */
-@media screen and (max-width: 600px) {
+/* Mostrar el menú móvil desde tablets (768px) y pantallas más pequeñas */
+@media screen and (max-width: 768px) {
   .menu-toggle {
     display: flex;
     align-items: center;
@@ -380,7 +364,8 @@ main {
   }
 
   .menu-toggle:hover {
-    background-color: #F58220;
+    background-color: var(--unab-naranja);
+    color: var(--fondo-blanco);
     border-radius: 15px;
     width: fit-content;
     height: fit-content;
@@ -392,7 +377,7 @@ main {
     flex-direction: column;
     gap: 3px;
     width: 100%;
-    background-color: #15455c;
+    background-color: var(--unab-azul-nav);
     border-radius: 10px;
     padding: 0 10px;
     transition: max-height 0.4s ease, padding 0.4s ease;
@@ -402,15 +387,33 @@ main {
     max-height: 500px; /* Suficiente para mostrar todos los elementos */
     padding: 10px;
   }
+
+  .nav-menu a {
+    color: var(--fondo-blanco);
+    text-decoration: none;
+  }
+
+  .Buscador {
+    margin-left: 0;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .Buscador input {
+    width: 100%;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(2, 1fr); /* Mantener 2 columnas en tablet */
+  }
 }
 
 /* media query para cuerpo de pagina */
 @media screen and (max-width: 600px) {
 
   body {
-    padding-top: 60px; /* Mantener el padding superior para el header fijo */
+    padding-top: 70px; /* Mantener el padding superior para el header fijo */
     text-align: center;
-    background-color: rgb(167, 163, 163);
   }
 
   .main-content {
